@@ -1,0 +1,6 @@
+{
+  "project": "qwen3-vl",
+  "status": "initialized-not-executed",
+  "framework": "PyTorch",
+  "launch": "VS Code / Remote SSH"
+}
