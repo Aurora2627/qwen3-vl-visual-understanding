@@ -22,3 +22,4 @@ reports/*prediction*.json
 reports/*check*.json
 reports/*confirmation*.json
 reports/provenance-matches.jsonl
+reports/local-model.json

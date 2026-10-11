@@ -1,0 +1,39 @@
+{
+  "run_id": "study-20261011-220741",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "generation": "greedy",
+  "attention": "eager",
+  "max_new_tokens": 192,
+  "image_long_edge_limit": 448,
+  "environment": {
+    "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "packages": {
+      "torch": "2.8.0",
+      "transformers": "4.57.6",
+      "Pillow": "11.3.0",
+      "numpy": "2.0.2"
+    }
+  },
+  "source_sha256": {
+    "src/judging.py": "08c015b87130aeb477a9fde14fa56b32259490a3a1717f47ff513fdae2e281d4",
+    "src/metrics.py": "eb0a4fa6e76c2f19f16495e2a50b00f3953e55e041e32cdd82d0f314bbda7040",
+    "src/modeling.py": "7c67d6343122b884607980752ded26a4f78e6f9394a184db3d023fbe06ca3992",
+    "src/run_record.py": "4cbdf305cfd0861f70efb039d37ab6ff8b22fafa8b75671a247b393306c97c82",
+    "scripts/download_model.py": "3fceeb804325747dd27953187e569a0ff698c868c3ad1e9302ed8d92bbc6f4b5",
+    "scripts/prepare_diagnostics.py": "8b41363b3fb06ac377c036a30c7f233f264d764dccaca99434b7dd44a914634c",
+    "scripts/run_study.py": "695e19c57f8432189ac4c6eb1ff8fe8a794d3024639d3b5d19a7c5a9c04c0f65",
+    "tests/test_judging.py": "b02b675c6c25ed2c2c467887c964da64bbf398bd92e9c83b51dede1a00081193",
+    "configs/execution.json": "a625aa7f194f0efad47d27f0d372ec78a99f9a42390cfc927dfa2a4bdb29b1bb",
+    ".vscode/extensions.json": "8c6f812c51f00612ce910215773fa24864e9591b0a476cd2e23ae43aa525cd04",
+    ".vscode/launch.json": "c3c16979a418828f7a4fa5d0a3e4741bad622907cd17e323fe79bc438f539fc2",
+    ".vscode/settings.json": "1c3f12b736d722d0946f7feeecbef9ec986a1f954b62b1b0048b1905f5d374ad",
+    "VERSION": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9",
+    "README.md": "90988517d0f9778f68178cc7c49193dfc7300f22f89eacff2750fbed2aecaa74",
+    "requirements.txt": "c06444fbe7d59f049ea45ba21857ad25e86825eede9f77ea1d1f97e4b3f8ca3c",
+    "VSCODE_START.md": "ae0c895b16a23669bbf030b33c7290f21635d20c4af9e9b6f3ea2f98add56a98"
+  },
+  "predictions_sha256": "1a715c82914ecf7c9c94656f246f918d503976556f68232626da25c623310d4e",
+  "scope": "8 synthetic diagnostic cases; not benchmark or human agreement"
+}

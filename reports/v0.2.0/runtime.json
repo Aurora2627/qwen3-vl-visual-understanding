@@ -1,0 +1,6 @@
+{
+  "mps_available": true,
+  "cuda_available": false,
+  "device": "mps",
+  "dtype": "float16"
+}

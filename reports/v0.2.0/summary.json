@@ -1,0 +1,425 @@
+{
+  "scope": "8 synthetic diagnostic cases; not benchmark or human agreement",
+  "groups": {
+    "direct": {
+      "n": 8,
+      "accuracy_all": 1.0,
+      "coverage": 1.0,
+      "accuracy_answered": 1.0,
+      "invalid_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "false_accept_count": 0,
+      "false_reject_count": 0,
+      "paired_images": 4,
+      "both_pair_members_correct": 4,
+      "pair_accuracy": 1.0,
+      "always_pass_accuracy": 0.5,
+      "always_fail_accuracy": 0.5,
+      "confusion_rows": [
+        "reference_PASS",
+        "reference_FAIL"
+      ],
+      "confusion_columns": [
+        "PASS",
+        "FAIL",
+        "UNCERTAIN",
+        "INVALID"
+      ],
+      "confusion": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          0
+        ]
+      ],
+      "categories": {
+        "binding": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "color": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "count": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "position": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "decomposed": {
+      "n": 8,
+      "accuracy_all": 0.75,
+      "coverage": 0.875,
+      "accuracy_answered": 0.8571428571428571,
+      "invalid_rate": 0.125,
+      "uncertain_rate": 0.0,
+      "false_accept_count": 1,
+      "false_reject_count": 0,
+      "paired_images": 4,
+      "both_pair_members_correct": 2,
+      "pair_accuracy": 0.5,
+      "always_pass_accuracy": 0.5,
+      "always_fail_accuracy": 0.5,
+      "confusion_rows": [
+        "reference_PASS",
+        "reference_FAIL"
+      ],
+      "confusion_columns": [
+        "PASS",
+        "FAIL",
+        "UNCERTAIN",
+        "INVALID"
+      ],
+      "confusion": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          1
+        ]
+      ],
+      "categories": {
+        "binding": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "color": {
+          "n": 2,
+          "accuracy_all": 1.0,
+          "coverage": 1.0,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 1,
+          "pair_accuracy": 1.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "count": {
+          "n": 2,
+          "accuracy_all": 0.5,
+          "coverage": 0.5,
+          "accuracy_answered": 1.0,
+          "invalid_rate": 0.5,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 0,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 0,
+          "pair_accuracy": 0.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "position": {
+          "n": 2,
+          "accuracy_all": 0.5,
+          "coverage": 1.0,
+          "accuracy_answered": 0.5,
+          "invalid_rate": 0.0,
+          "uncertain_rate": 0.0,
+          "false_accept_count": 1,
+          "false_reject_count": 0,
+          "paired_images": 1,
+          "both_pair_members_correct": 0,
+          "pair_accuracy": 0.0,
+          "always_pass_accuracy": 0.5,
+          "always_fail_accuracy": 0.5,
+          "confusion_rows": [
+            "reference_PASS",
+            "reference_FAIL"
+          ],
+          "confusion_columns": [
+            "PASS",
+            "FAIL",
+            "UNCERTAIN",
+            "INVALID"
+          ],
+          "confusion": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "controls": {
+    "mismatched_image": {
+      "n": 8,
+      "verdict_counts": {
+        "PASS": 0,
+        "FAIL": 8,
+        "UNCERTAIN": 0,
+        "INVALID": 0
+      },
+      "accuracy": null,
+      "reason": "No image or different image; original labels are inapplicable",
+      "same_verdict_as_direct": 4
+    },
+    "no_image": {
+      "n": 8,
+      "verdict_counts": {
+        "PASS": 8,
+        "FAIL": 0,
+        "UNCERTAIN": 0,
+        "INVALID": 0
+      },
+      "accuracy": null,
+      "reason": "No image or different image; original labels are inapplicable",
+      "same_verdict_as_direct": 4
+    }
+  }
+}
