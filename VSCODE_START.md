@@ -43,3 +43,15 @@ F5 选择“03 EvalMuse 真实图人工一致性评测”。断点可放在 `src
 ```
 
 它等待本次实验成功，依次运行测试、报告导出、快照/输入/张量/发布字段校验，再更新结果文档并提交、标记和推送 v0.3.0。去掉 `--publish` 则只生成报告和文档。等待期间若源码、Git HEAD 或其他文件发生更改，会停止收尾，留待检查；模型失败或校验失败也不发布。报告与收尾计划拒绝覆盖，不能盲目重复执行。收尾程序本身不启动模型实验。
+
+## Windows RTX 4060 / CUDA（v0.4.0）
+
+已验证环境：D:/career-projects/envs/multimodal-gpu/Scripts/python.exe，Python 3.9.18、torch 2.8.0+cu126、transformers 4.57.6。在 VS Code Remote SSH 选择此解释器，可 F5 调试当前 Python 文件；Mac 的 PYTHONPATH 不带入 Windows，模型计算在 Windows。
+
+在项目远程终端运行：
+
+    python -X utf8 -m unittest discover -s tests -v
+    python -X utf8 scripts/run_choice_study.py --device cuda
+    python -X utf8 scripts/report_choice_study.py runs/choice-实际时间戳 --output reports/新的报告目录
+
+准备固定 revision 权重及 evalmuse-pilot-v1/v2 数据，v2 开发集引用 v1 图片。拒绝覆盖已有运行和报告。单图实测显存见 reports/v0.4.0/cuda-compatibility.json；独立源码/输入快照、温度及 logits .pt 保留本机。

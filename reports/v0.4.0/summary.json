@@ -1,0 +1,724 @@
+{
+  "groups": {
+    "development/overall_free": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4774970129615429,
+      "plcc_scored_only": 0.4868700878472219,
+      "strict_human_pairs": 12,
+      "pair_correct": 3,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.25,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.07468628543529479,
+        0.7495837576972577
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "development/overall_fixed": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4774970129615429,
+      "plcc_scored_only": 0.4868700878472219,
+      "strict_human_pairs": 12,
+      "pair_correct": 3,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.25,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.07468628543529479,
+        0.7495837576972577
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "development/elements_fixed": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 24,
+      "score_coverage": 0.75,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.47824764412978565,
+      "plcc_scored_only": 0.4307495851417324,
+      "strict_human_pairs": 12,
+      "pair_correct": 3,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 5,
+      "pair_accuracy_all_strict": 0.25,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.06422288421611282,
+        0.7224589396720852
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group",
+      "elements": {
+        "n": 150,
+        "correct": 92,
+        "accuracy_all": 0.6133333333333333,
+        "unanswered": 9,
+        "human_disagreement_elements": 80,
+        "mean_human_minority_fraction": 0.16666666666666655,
+        "reference_positive": 91,
+        "always_pass_accuracy": 0.6066666666666667,
+        "always_fail_accuracy": 0.3933333333333333,
+        "balanced_accuracy_all": 0.5233749301545911,
+        "categories": {
+          "human": {
+            "n": 22,
+            "correct": 10,
+            "false_accept": 9,
+            "false_reject": 1,
+            "unanswered": 2
+          },
+          "object": {
+            "n": 15,
+            "correct": 10,
+            "false_accept": 5,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "other-perspective": {
+            "n": 6,
+            "correct": 6,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "activity": {
+            "n": 15,
+            "correct": 5,
+            "false_accept": 9,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "object-cloth&accessories": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "location": {
+            "n": 14,
+            "correct": 14,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute-style-artist/works": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-weather": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "other": {
+            "n": 20,
+            "correct": 4,
+            "false_accept": 11,
+            "false_reject": 1,
+            "unanswered": 4
+          },
+          "material": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute": {
+            "n": 16,
+            "correct": 11,
+            "false_accept": 3,
+            "false_reject": 1,
+            "unanswered": 1
+          },
+          "animal": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-time": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Counting": {
+            "n": 4,
+            "correct": 1,
+            "false_accept": 3,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "object-other": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "color": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Spatial": {
+            "n": 4,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 2
+          },
+          "time": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "spatial": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          }
+        },
+        "reference": "strict majority of released binary human votes; tied votes excluded"
+      }
+    },
+    "development/overall_expected": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4685268189039337,
+      "plcc_scored_only": 0.5141965001795593,
+      "strict_human_pairs": 12,
+      "pair_correct": 7,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.5833333333333334,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.1115759549216705,
+        0.717187482172763
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "development/overall_calibrated": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4445187438319939,
+      "plcc_scored_only": 0.46648638356992467,
+      "strict_human_pairs": 12,
+      "pair_correct": 8,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.6666666666666666,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.05466512840368617,
+        0.7070225211460563
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "heldout/overall_free": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4463200972863514,
+      "plcc_scored_only": 0.426932486549206,
+      "strict_human_pairs": 15,
+      "pair_correct": 7,
+      "human_tied_pairs": 1,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.4666666666666667,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.09721036474214872,
+        0.7157667156293406
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "heldout/overall_fixed": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4463200972863514,
+      "plcc_scored_only": 0.426932486549206,
+      "strict_human_pairs": 15,
+      "pair_correct": 7,
+      "human_tied_pairs": 1,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.4666666666666667,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.09721036474214872,
+        0.7157667156293406
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "heldout/elements_fixed": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 26,
+      "score_coverage": 0.8125,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.2482820418435598,
+      "plcc_scored_only": 0.2994442839513363,
+      "strict_human_pairs": 15,
+      "pair_correct": 4,
+      "human_tied_pairs": 1,
+      "unscored_pairs": 5,
+      "pair_accuracy_all_strict": 0.26666666666666666,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        -0.16146076296304135,
+        0.6016642050190536
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group",
+      "elements": {
+        "n": 140,
+        "correct": 90,
+        "accuracy_all": 0.6428571428571429,
+        "unanswered": 6,
+        "human_disagreement_elements": 65,
+        "mean_human_minority_fraction": 0.14523809523809517,
+        "reference_positive": 86,
+        "always_pass_accuracy": 0.6142857142857143,
+        "always_fail_accuracy": 0.38571428571428573,
+        "balanced_accuracy_all": 0.5611541774332471,
+        "categories": {
+          "object": {
+            "n": 12,
+            "correct": 8,
+            "false_accept": 4,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "location": {
+            "n": 12,
+            "correct": 8,
+            "false_accept": 4,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute": {
+            "n": 8,
+            "correct": 4,
+            "false_accept": 4,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "activity": {
+            "n": 12,
+            "correct": 8,
+            "false_accept": 3,
+            "false_reject": 0,
+            "unanswered": 1
+          },
+          "other": {
+            "n": 9,
+            "correct": 6,
+            "false_accept": 3,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Counting": {
+            "n": 16,
+            "correct": 6,
+            "false_accept": 9,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "human": {
+            "n": 13,
+            "correct": 8,
+            "false_accept": 4,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "object-electronic": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "animal": {
+            "n": 7,
+            "correct": 7,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "color": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "other-perspective": {
+            "n": 6,
+            "correct": 6,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "object-other": {
+            "n": 6,
+            "correct": 3,
+            "false_accept": 3,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute-style-artist/works": {
+            "n": 6,
+            "correct": 5,
+            "false_accept": 0,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "Other-weather": {
+            "n": 6,
+            "correct": 6,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-time": {
+            "n": 6,
+            "correct": 1,
+            "false_accept": 0,
+            "false_reject": 2,
+            "unanswered": 3
+          },
+          "animal/human": {
+            "n": 3,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 1
+          },
+          "object-vehicle": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Color) ": {
+            "n": 4,
+            "correct": 2,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 1
+          },
+          "Material) ": {
+            "n": 4,
+            "correct": 2,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "object-cloth&accessories": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          }
+        },
+        "reference": "strict majority of released binary human votes; tied votes excluded"
+      }
+    },
+    "heldout/overall_expected": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.4416264204797022,
+      "plcc_scored_only": 0.44982206210502906,
+      "strict_human_pairs": 15,
+      "pair_correct": 12,
+      "human_tied_pairs": 1,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.8,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.08377279649371981,
+        0.7297408931793397
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "heldout/overall_calibrated": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 32,
+      "score_coverage": 1.0,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.43905026636023725,
+      "plcc_scored_only": 0.463031775858521,
+      "strict_human_pairs": 15,
+      "pair_correct": 13,
+      "human_tied_pairs": 1,
+      "unscored_pairs": 0,
+      "pair_accuracy_all_strict": 0.8666666666666667,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.020991372694573338,
+        0.7792451326348496
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    }
+  },
+  "calibration": {
+    "development": {
+      "expected": {
+        "nll": 3.355345029264552,
+        "soft_target_brier": 0.6338324024473334,
+        "expected_scores": [
+          4.810942434659486,
+          4.9960390583713155,
+          4.0929623662526495,
+          4.623998573459069,
+          4.999686094479296,
+          4.999899420571401,
+          4.825929155348745,
+          4.198721832561737,
+          4.995700792851096,
+          2.8398379545902883,
+          2.1292523234870266,
+          2.2160145362700283,
+          4.84707914658032,
+          4.7906375440746425,
+          4.99819237084581,
+          2.158134011856855,
+          1.900264599025653,
+          4.991775927828849,
+          4.207305933829623,
+          1.9398685341371917,
+          2.377699187253854,
+          1.9697532030697258,
+          2.733783775844949,
+          2.43046869016025,
+          3.027816491988064,
+          3.8512060934023693,
+          4.8426764356165615,
+          4.836810939278788,
+          1.9082993106055455,
+          1.741347199833882,
+          4.375779110373449,
+          4.600368573598485
+        ],
+        "interpretation": "Human vote distribution conditional on this task and candidate set, not general correctness confidence"
+      },
+      "calibrated": {
+        "nll": 1.5062639559738615,
+        "soft_target_brier": 0.36378549209196526,
+        "expected_scores": [
+          3.6624622744650424,
+          3.855040700994474,
+          3.551809437344316,
+          3.709516379353457,
+          4.113297863674812,
+          4.13111683805257,
+          3.6556040847766607,
+          3.4427472550197864,
+          3.9317621494789936,
+          2.948070557266216,
+          2.765091289949822,
+          2.719336475861551,
+          3.3522480765463802,
+          3.3514113368342793,
+          3.8814369692803794,
+          2.704910931776746,
+          2.3884828757553875,
+          3.9413202143806503,
+          3.474296428748795,
+          2.271299985700541,
+          2.806879034916257,
+          2.644763794660257,
+          2.938821805422602,
+          2.804537548021901,
+          3.075206841597338,
+          3.3520502349115238,
+          3.5894822603173298,
+          3.5705139280245715,
+          2.711903159734003,
+          2.606966209906552,
+          3.530004090710123,
+          3.6279939742057965
+        ],
+        "interpretation": "Human vote distribution conditional on this task and candidate set, not general correctness confidence"
+      }
+    },
+    "heldout": {
+      "expected": {
+        "nll": 4.074024498836879,
+        "soft_target_brier": 0.641704359624277,
+        "expected_scores": [
+          4.126804520855065,
+          4.923988596042758,
+          1.8852000871836054,
+          3.7205598795623365,
+          4.979292670313429,
+          4.987399037915129,
+          4.991404443975928,
+          1.4546753299232114,
+          4.997862259286656,
+          4.976181875271017,
+          4.998115767049503,
+          4.982603702199659,
+          2.9047422920255297,
+          4.491070157904083,
+          4.7904733343225105,
+          1.6148051715822191,
+          3.6015216097913942,
+          3.098935236344526,
+          4.163242567008216,
+          3.5450564421859077,
+          2.3004366225602464,
+          3.244306279747992,
+          1.824026497924375,
+          1.8031487083250721,
+          4.979093747039611,
+          4.995453468814903,
+          3.4680863091665493,
+          1.0145456132862627,
+          2.4249863919547554,
+          4.999654303769829,
+          4.977727529462817,
+          4.98226672285692
+        ],
+        "interpretation": "Human vote distribution conditional on this task and candidate set, not general correctness confidence"
+      },
+      "calibrated": {
+        "nll": 1.5172631423417233,
+        "soft_target_brier": 0.3476920940959916,
+        "expected_scores": [
+          3.461035226443104,
+          3.809697275133706,
+          2.5771924840788945,
+          3.242136458400272,
+          3.907796829856486,
+          3.9370040276279354,
+          3.82524334868623,
+          2.19961549884684,
+          3.9264397587340434,
+          3.859226606477151,
+          3.9173978865471315,
+          3.7791772418860337,
+          2.878067990533707,
+          3.452743701556773,
+          3.5840061928211346,
+          2.3811570804670823,
+          3.4240874977736837,
+          3.195094992408034,
+          3.445965574312069,
+          3.255660919131325,
+          2.8068760358797444,
+          3.209284275801926,
+          2.286064972690697,
+          2.4816916256874046,
+          3.8293915223102233,
+          3.986197316878009,
+          3.2723968179345273,
+          1.9123178046823788,
+          2.7009732236761828,
+          3.9500466596481845,
+          3.7942386138224053,
+          3.8625724519616043
+        ],
+        "interpretation": "Human vote distribution conditional on this task and candidate set, not general correctness confidence"
+      }
+    }
+  },
+  "temperature": 8.320894698139677,
+  "image_protocol_records": 192,
+  "actual_generation_calls": 428,
+  "scope": "v2 pilot; 32 reused development images, 32 images from unused heldout prompts",
+  "comparison": "overall_free vs overall_fixed share the same prompt; JSON v1 is historical only"
+}

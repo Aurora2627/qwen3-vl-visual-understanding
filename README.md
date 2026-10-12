@@ -51,3 +51,28 @@
 已在 VS Code 使用系统 Python / PyTorch / MPS 完成 128 次推理；13 项测试通过。相关性仅对有分数输出计算，排序中的模型平局、格式错误和不计分均算错。详细区间、全 PASS/FAIL 基线、类别误差及完整性校验见 [真实图报告](reports/v0.3.0/RESULTS.md)。
 
 每部分只有 16 个指令组，不能据此宣称显著提升。本版没有微调；原始输入、完整预测及源码快照保留在 `runs/real-20261012-101552`。导出与收尾校验程序在模型运行期间完善，不改动运行前保存的源码快照。
+
+## 固定选项与开发集校准（v0.4.0）
+
+官方 Qwen3-VL-2B-Instruct 固定权重，在 VS Code Remote SSH 的 Windows RTX 4060 上以 PyTorch CUDA/FP16 运行。自由评分与固定选项使用相同短提示词。开发集 32 张沿用既有数据；保留集 32 张来自此前未观察指令。
+
+| 数据/协议 | 有分数/总数 | SRCC | 排序正确/非平局 |
+|---|---:|---:|---:|
+| development/overall_free | 32/32 | 0.477 | 3/12 |
+| development/overall_fixed | 32/32 | 0.477 | 3/12 |
+| development/elements_fixed | 24/32 | 0.478 | 3/12 |
+| development/overall_expected | 32/32 | 0.469 | 7/12 |
+| development/overall_calibrated | 32/32 | 0.445 | 8/12 |
+| heldout/overall_free | 32/32 | 0.446 | 7/15 |
+| heldout/overall_fixed | 32/32 | 0.446 | 7/15 |
+| heldout/elements_fixed | 26/32 | 0.248 | 4/15 |
+| heldout/overall_expected | 32/32 | 0.442 | 12/15 |
+| heldout/overall_calibrated | 32/32 | 0.439 | 13/15 |
+
+共 428 次模型生成、192 条图片/协议记录，23 项测试通过。完整指标、按指令重采样区间、概率校准与限制见 [v0.4 报告](reports/v0.4.0/RESULTS.md)。
+
+温度由 PyTorch 在开发集人工评分票分布上拟合，仅改变一个标量，不更新 Qwen 参数；候选集合内相对概率不能当作真实正确置信度。公开训练数据的小规模子集未复现官方榜单，新保留结果公开后不继续用它调参。
+
+Mac 中断实验保持原样；本次 CUDA 运行单独保存在 runs/choice-cuda-20261012-175148。源码、输入、日志、预测和 .pt 参数保留本机，数据和权重不上传 GitHub。
+
+本次自由与固定选项在 64/64 张图上离散分数相同，不能宣称约束打分提高准确率。校准改善保留集 NLL/Brier，未改善 SRCC；细粒度判断仍有明显误差。详见 v0.4 报告的结果解读。

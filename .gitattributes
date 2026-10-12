@@ -1,0 +1,2 @@
+# Preserve published evidence bytes and recorded SHA256 across platforms.
+reports/v0.4.0/* -text

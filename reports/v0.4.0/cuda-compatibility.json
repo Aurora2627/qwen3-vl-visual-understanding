@@ -1,0 +1,13 @@
+{
+  "scope": "one development image; compatibility and memory only",
+  "gpu": {
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "torch": "2.8.0+cu126",
+    "peak_allocated_bytes": 4370516480,
+    "peak_reserved_bytes": 4448059392,
+    "dtype": "torch.float16"
+  },
+  "unit_tests": 23,
+  "download_source": "official Hugging Face on Windows; all 10 files size/SHA256 checked",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+}
