@@ -6,13 +6,15 @@ from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
 
 
 class QwenJudge:
-    def __init__(self, directory, device='cuda'):
+    def __init__(self, directory, device='cuda', dtype=None):
         if device == 'mps' and not torch.backends.mps.is_available():
             raise RuntimeError('MPS unavailable in this process; run from VS Code or explicitly select CPU')
         if device == 'cuda' and not torch.cuda.is_available():
             raise RuntimeError('CUDA unavailable')
         self.device = torch.device(device)
-        dtype = torch.float32 if device == 'cpu' else torch.float16
+        dtype = dtype or (torch.float32 if device == 'cpu' else torch.float16)
+        if dtype not in (torch.float16, torch.bfloat16, torch.float32):
+            raise ValueError('Unsupported dtype')
         self.processor = AutoProcessor.from_pretrained(directory, local_files_only=True)
         self.model = Qwen3VLForConditionalGeneration.from_pretrained(
             directory, local_files_only=True, dtype=dtype, attn_implementation='eager').to(self.device).eval()

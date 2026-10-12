@@ -18,5 +18,19 @@
   "default_device": "cuda",
   "local_device": "cuda",
   "cuda_compatibility": "passed: RTX 4060 Laptop 8GB",
-  "compatibility_tests": 23
+  "compatibility_tests": 31,
+  "current_version": "0.5.0",
+  "current_stage": "Element human-vote supervised LoRA development pilot",
+  "element_lora": {
+    "precision": "bf16",
+    "train_images": 24,
+    "validation_images": 8,
+    "train_elements": 128,
+    "validation_elements": 28,
+    "optimizer_updates": 32,
+    "trainable_parameters": 114688,
+    "independent_test_available": false,
+    "validation_improved": false,
+    "report": "reports/v0.5.0/RESULTS.md"
+  }
 }

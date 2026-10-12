@@ -21,3 +21,7 @@ CUDA 是默认设备，缺少 CUDA 会报错，避免意外占用 Mac。显式 -
 LLaVA 默认小模型为 OneVision 0.5B，训练入口在支持时使用 BF16，FP16 路径使用梯度缩放；兼容性 smoke 使用 FP16 基座。Qwen 2B 使用 FP16。8GB 显存下建议训练长边 384/512、梯度检查点与梯度累积；更大模型/分辨率需要另行实测。
 
 历史数据集、旧 adapter 与本轮环境不随 GitHub 下载。旧 MPS 指标不改写成 CUDA 结果；迁移可运行代码与完整复跑历史实验是不同工作。历史协议仍保存原设备，新入口在运行配置中记录实际 CUDA 覆盖。
+
+## 逐条件 LoRA（v0.5.0）
+
+当前工作区已增加 BF16 CUDA 训练与新进程重载入口；完整顺序见 [ELEMENT_LORA.md](ELEMENT_LORA.md)。增量模板为 configs/vscode-launch.element-lora.json。已有数据准备目录不重建，实验输出必须用新名字。

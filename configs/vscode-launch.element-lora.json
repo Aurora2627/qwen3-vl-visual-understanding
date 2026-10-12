@@ -1,0 +1,82 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1"
+      },
+      "name": "CUDA element LoRA prepare (once)",
+      "program": "${workspaceFolder}/scripts/prepare_element_sft.py"
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1"
+      },
+      "name": "CUDA element LoRA development training (BF16)",
+      "program": "${workspaceFolder}/scripts/train_element_lora.py",
+      "args": [
+        "--model-dir",
+        "${workspaceFolder}/data/cache/local-qwen3-vl/89644892e4d85e24eaac8bacfd4f463576704203",
+        "--model-revision",
+        "89644892e4d85e24eaac8bacfd4f463576704203",
+        "--precision",
+        "bf16",
+        "--output",
+        "${workspaceFolder}/runs/${input:elementRunName}"
+      ]
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1"
+      },
+      "name": "CUDA element LoRA fresh-process reload",
+      "program": "${workspaceFolder}/scripts/train_element_lora.py",
+      "args": [
+        "--model-dir",
+        "${workspaceFolder}/data/cache/local-qwen3-vl/89644892e4d85e24eaac8bacfd4f463576704203",
+        "--model-revision",
+        "89644892e4d85e24eaac8bacfd4f463576704203",
+        "--precision",
+        "bf16",
+        "--output",
+        "${workspaceFolder}/runs/${input:elementRunName}",
+        "--reload-checkpoint",
+        "${workspaceFolder}/runs/${input:elementAdapterRun}/adapter.pt"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "elementRunName",
+      "type": "promptString",
+      "description": "New output directory name; do not reuse an existing run",
+      "default": "element-lora-manual"
+    },
+    {
+      "id": "elementAdapterRun",
+      "type": "promptString",
+      "description": "Existing trained run directory containing adapter.pt"
+    }
+  ]
+}

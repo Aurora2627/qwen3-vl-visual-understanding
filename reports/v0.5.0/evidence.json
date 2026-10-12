@@ -1,0 +1,128 @@
+{
+  "version": "0.5.0",
+  "scope": "Observed development train/validation only; no independent-test or generalization claim",
+  "independent_test_available": false,
+  "algorithm_improvement_claim": false,
+  "run": "element-lora-pilot-20261012-215837",
+  "reload_run": "element-lora-pilot-reload-20261012-215837",
+  "dataset": {
+    "train": {
+      "images": 24,
+      "prompts": 12,
+      "elements": 128
+    },
+    "validation": {
+      "images": 8,
+      "prompts": 4,
+      "elements": 28
+    }
+  },
+  "training": {
+    "scope": "Observed development train/validation only; no independent-test or generalization claim",
+    "baseline": {
+      "examples": 28,
+      "human_ties": 2,
+      "vote_nll": 1.0398402507281397,
+      "vote_brier": 0.50509574718708,
+      "majority_accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.8235294117647058,
+      "majority_class_counts_fail_pass": [
+        9,
+        17
+      ]
+    },
+    "selected_validation": {
+      "examples": 28,
+      "human_ties": 2,
+      "vote_nll": 1.0521875090848138,
+      "vote_brier": 0.5353283113625386,
+      "majority_accuracy": 0.7307692307692307,
+      "balanced_accuracy": 0.7941176470588236,
+      "majority_class_counts_fail_pass": [
+        9,
+        17
+      ]
+    },
+    "optimizer_updates": 32,
+    "epochs": 1,
+    "nonzero_B_matrices": 8,
+    "training_seconds": 121.95233510000001,
+    "in_process_reload_max_logit_difference": 0.0,
+    "peak_allocated_bytes": 4309697536,
+    "peak_reserved_bytes": 4332716032,
+    "independent_test_available": false,
+    "algorithm_improvement_claim": false
+  },
+  "architecture": {
+    "targets": [
+      "model.language_model.layers.24.self_attn.q_proj",
+      "model.language_model.layers.24.self_attn.v_proj",
+      "model.language_model.layers.25.self_attn.q_proj",
+      "model.language_model.layers.25.self_attn.v_proj",
+      "model.language_model.layers.26.self_attn.q_proj",
+      "model.language_model.layers.26.self_attn.v_proj",
+      "model.language_model.layers.27.self_attn.q_proj",
+      "model.language_model.layers.27.self_attn.v_proj"
+    ],
+    "trainable_parameters": 114688,
+    "total_parameters": 2127646720,
+    "choice_token_ids": [
+      49792,
+      36973
+    ],
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "dtype": "bf16 frozen base, FP32 adapters, CUDA autocast",
+    "gradient_checkpointing": true,
+    "image_max_edge": 224
+  },
+  "training_label_prior": 0.6080729166666662,
+  "constant_train_prior_validation": {
+    "examples": 28,
+    "human_ties": 2,
+    "vote_nll": 0.6830827879628314,
+    "vote_brier": 0.48990836976066465,
+    "majority_accuracy": 0.6538461538461539,
+    "balanced_accuracy": 0.5,
+    "majority_class_counts_fail_pass": [
+      9,
+      17
+    ]
+  },
+  "fresh_process_reload": {
+    "scope": "Observed development train/validation only; no independent-test or generalization claim",
+    "reload_passed": true,
+    "max_logit_difference": 0.0,
+    "metrics": {
+      "examples": 28,
+      "human_ties": 2,
+      "vote_nll": 1.0521875090848138,
+      "vote_brier": 0.5353283113625386,
+      "majority_accuracy": 0.7307692307692307,
+      "balanced_accuracy": 0.7941176470588236,
+      "majority_class_counts_fail_pass": [
+        9,
+        17
+      ]
+    },
+    "peak_allocated_bytes": 4285407744,
+    "peak_reserved_bytes": 4307550208
+  },
+  "checkpoint_sha256": "ba96eda96ac2df9077c75ce01bf5ff3077e55231f33d1f1c036583d213fe6868",
+  "runtime_source_sha256_utf8_lf": {
+    "src/modeling.py": "dfad28532db894b85b9dc87fa856e26ef61a43cd7f9e6de5ed32e146ed711c19",
+    "src/element_data.py": "a339052b05a91ac58001b6dad3bae34ba14fccb11360171e986ae9bbda460b17",
+    "src/element_lora.py": "af5f2b5e15606169bb315ef0d800f17c2eb80f6be7b41d1818d7b49b365beabb",
+    "src/element_training.py": "1a283ba6e0754bf032d22ad61d508211e61d17c19a13638b1e61e9b3c4f72030",
+    "src/constrained_choice.py": "fc19ccdac8dd32a73499fb393ca48e25bce27425153015e1fd51e59c0bc1417a",
+    "scripts/train_element_lora.py": "1ad0718b795403fc76c5600d8b5a8c06b32f10b5f1047a4c5cb584f285fe5dc5"
+  },
+  "notes": [
+    "31 tests passed for the training source",
+    "Historical holdout results were previously observed; they are quarantined",
+    "New unseen-data download blocked by Windows huggingface.co DNS resolution",
+    "Original FP16 full-data run failed nonfinite gradient; preserved, not counted as successful",
+    "BF16 run is separate; no rerun overwrites the original evidence",
+    "Binary PASS/FAIL differs from the older PASS/FAIL/UNCERTAIN protocol",
+    "Public training-data pilot, not the official EvalMuse benchmark"
+  ]
+}
