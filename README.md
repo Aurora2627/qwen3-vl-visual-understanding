@@ -1,12 +1,16 @@
 # Qwen3-VL 视觉生成结果评测与诊断
 
+当前维护与求职展示以 main 分支的 Windows / NVIDIA CUDA 版本为准。后续编写、调试、测试与实验均通过 VS Code Remote SSH 在 Windows 完成；Mac 仅作为远程连接终端。旧提交、旧标签和已完成实验保留真实历史，不代表当前默认运行方式。
+
+当前运行入口与验证范围见 [CURRENT_STATUS.md](CURRENT_STATUS.md)。
+
 当前开发环境：Windows + CUDA，Mac 通过 VS Code Remote SSH 编辑。模型入口默认使用 NVIDIA GPU。启动步骤见 [VSCODE_START.md](VSCODE_START.md)，兼容性记录见 [本版检查](reports/v0.4.1/compatibility.json)。下文历史 MPS 指标仍描述原实验。
 
 目标：判断生成图片是否满足原始指令，输出逐条件判断与可见证据，并研究评估器的误判、拒答和输入依赖。
 
 ## 当前实现
 
-- 官方 Qwen3-VL-2B-Instruct，Transformers/PyTorch；明确选择 MPS、CUDA 或 CPU，不静默切换设备。
+- 官方 Qwen3-VL-2B-Instruct，Transformers/PyTorch；默认 CUDA，缺少 CUDA 明确报错；其他设备仅保留兼容接口。
 - 两种协议：整体判断 baseline、逐条件判断并以确定性规则聚合。
 - 无图与错配图片控制，用于诊断是否依赖图像。错配图片不能沿用原图标签计算准确率。
 - 严格 JSON 解析，PASS/FAIL/UNCERTAIN/INVALID 分开统计；所有样本进入总准确率分母。

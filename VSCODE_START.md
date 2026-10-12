@@ -1,5 +1,9 @@
 # Windows CUDA / VS Code 使用说明
 
+当前维护与求职展示以 main 分支的 Windows / NVIDIA CUDA 版本为准。后续编写、调试、测试与实验均通过 VS Code Remote SSH 在 Windows 完成；Mac 仅作为远程连接终端。旧提交、旧标签和已完成实验保留真实历史，不代表当前默认运行方式。
+
+当前运行入口与验证范围见 [CURRENT_STATUS.md](CURRENT_STATUS.md)。
+
 Mac 连接 SSH 别名 hry26278，打开 Windows 的 D:/career-projects/multimodal.code-workspace。Mac 负责编辑，模型计算在 Windows 执行。
 
 1. 在 VS Code 选择 Python 解释器 D:/career-projects/envs/multimodal-gpu/Scripts/python.exe。
