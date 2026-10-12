@@ -1,0 +1,402 @@
+{
+  "scope": "64-image / 32-prompt local pilot from public training annotations, not official test",
+  "groups": {
+    "development/overall": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 19,
+      "score_coverage": 0.59375,
+      "invalid_outputs": 13,
+      "srcc_scored_only": null,
+      "plcc_scored_only": null,
+      "strict_human_pairs": 12,
+      "pair_correct": 0,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 7,
+      "pair_accuracy_all_strict": 0.0,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": null,
+      "valid_replicates": 0,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "development/elements": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 25,
+      "score_coverage": 0.78125,
+      "invalid_outputs": 4,
+      "srcc_scored_only": 0.54540666606356,
+      "plcc_scored_only": 0.6075703877112397,
+      "strict_human_pairs": 12,
+      "pair_correct": 2,
+      "human_tied_pairs": 4,
+      "unscored_pairs": 4,
+      "pair_accuracy_all_strict": 0.16666666666666666,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.1427042861276271,
+        0.8035853811680521
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group",
+      "elements": {
+        "n": 150,
+        "correct": 87,
+        "accuracy_all": 0.58,
+        "unanswered": 34,
+        "human_disagreement_elements": 80,
+        "mean_human_minority_fraction": 0.16666666666666655,
+        "reference_positive": 91,
+        "always_pass_accuracy": 0.6066666666666667,
+        "always_fail_accuracy": 0.3933333333333333,
+        "balanced_accuracy_all": 0.5078226857887875,
+        "categories": {
+          "human": {
+            "n": 22,
+            "correct": 10,
+            "false_accept": 5,
+            "false_reject": 1,
+            "unanswered": 6
+          },
+          "object": {
+            "n": 15,
+            "correct": 8,
+            "false_accept": 5,
+            "false_reject": 1,
+            "unanswered": 1
+          },
+          "other-perspective": {
+            "n": 6,
+            "correct": 5,
+            "false_accept": 0,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "activity": {
+            "n": 15,
+            "correct": 4,
+            "false_accept": 4,
+            "false_reject": 1,
+            "unanswered": 6
+          },
+          "object-cloth&accessories": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "location": {
+            "n": 14,
+            "correct": 13,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 1
+          },
+          "attribute-style-artist/works": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-weather": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "other": {
+            "n": 20,
+            "correct": 6,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 13
+          },
+          "material": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute": {
+            "n": 16,
+            "correct": 11,
+            "false_accept": 0,
+            "false_reject": 1,
+            "unanswered": 4
+          },
+          "animal": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-time": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Counting": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "object-other": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "color": {
+            "n": 4,
+            "correct": 0,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 2
+          },
+          "Spatial": {
+            "n": 4,
+            "correct": 2,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "time": {
+            "n": 4,
+            "correct": 3,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "spatial": {
+            "n": 4,
+            "correct": 2,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 1
+          }
+        },
+        "reference": "strict majority of released binary human votes; tied votes excluded"
+      }
+    },
+    "heldout/overall": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 16,
+      "score_coverage": 0.5,
+      "invalid_outputs": 16,
+      "srcc_scored_only": null,
+      "plcc_scored_only": null,
+      "strict_human_pairs": 14,
+      "pair_correct": 0,
+      "human_tied_pairs": 2,
+      "unscored_pairs": 10,
+      "pair_accuracy_all_strict": 0.0,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": null,
+      "valid_replicates": 0,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group"
+    },
+    "heldout/elements": {
+      "n_images": 32,
+      "n_prompt_groups": 16,
+      "scored_images": 31,
+      "score_coverage": 0.96875,
+      "invalid_outputs": 0,
+      "srcc_scored_only": 0.35156509920797774,
+      "plcc_scored_only": 0.3801979820876372,
+      "strict_human_pairs": 14,
+      "pair_correct": 3,
+      "human_tied_pairs": 2,
+      "unscored_pairs": 1,
+      "pair_accuracy_all_strict": 0.21428571428571427,
+      "pair_treatment": "Human ties excluded; prediction ties, invalid and abstentions count as incorrect",
+      "random_strict_pair_baseline": 0.5,
+      "constant_score_srcc": null,
+      "constant_score_reason": "Zero variance makes correlation undefined",
+      "srcc_95_interval": [
+        0.016723446434902745,
+        0.6269755157213701
+      ],
+      "valid_replicates": 1000,
+      "bootstrap_replicates": 1000,
+      "resampling_unit": "canonical prompt group",
+      "elements": {
+        "n": 112,
+        "correct": 75,
+        "accuracy_all": 0.6696428571428571,
+        "unanswered": 1,
+        "human_disagreement_elements": 59,
+        "mean_human_minority_fraction": 0.1532738095238095,
+        "reference_positive": 67,
+        "always_pass_accuracy": 0.5982142857142857,
+        "always_fail_accuracy": 0.4017857142857143,
+        "balanced_accuracy_all": 0.6034825870646766,
+        "categories": {
+          "animal": {
+            "n": 10,
+            "correct": 9,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "counting": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "human": {
+            "n": 10,
+            "correct": 7,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 1
+          },
+          "activity": {
+            "n": 11,
+            "correct": 7,
+            "false_accept": 4,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "animal/human": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "other-perspective": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "object": {
+            "n": 20,
+            "correct": 14,
+            "false_accept": 6,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "color": {
+            "n": 6,
+            "correct": 6,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute": {
+            "n": 12,
+            "correct": 7,
+            "false_accept": 4,
+            "false_reject": 1,
+            "unanswered": 0
+          },
+          "other": {
+            "n": 8,
+            "correct": 2,
+            "false_accept": 6,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Counting": {
+            "n": 3,
+            "correct": 1,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-writing&symbol": {
+            "n": 2,
+            "correct": 0,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "location": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "attribute-style-artist/works": {
+            "n": 2,
+            "correct": 0,
+            "false_accept": 0,
+            "false_reject": 2,
+            "unanswered": 0
+          },
+          "Other-weather": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Other-time": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "food": {
+            "n": 2,
+            "correct": 2,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "material": {
+            "n": 2,
+            "correct": 1,
+            "false_accept": 1,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Color) ": {
+            "n": 4,
+            "correct": 2,
+            "false_accept": 2,
+            "false_reject": 0,
+            "unanswered": 0
+          },
+          "Material) ": {
+            "n": 4,
+            "correct": 4,
+            "false_accept": 0,
+            "false_reject": 0,
+            "unanswered": 0
+          }
+        },
+        "reference": "strict majority of released binary human votes; tied votes excluded"
+      }
+    }
+  }
+}

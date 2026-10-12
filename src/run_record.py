@@ -11,7 +11,7 @@ def snapshot_run(output,config,manifests=()):
         for source in sorted((ROOT/folder).rglob('*')):
             if not source.is_file() or '__pycache__' in source.parts:continue
             relative=source.relative_to(ROOT);target=snapshot/relative;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target);sources[str(relative)]=sha(source)
-    for name in ['VERSION','README.md','PROJECT_PLAN.md','requirements.txt','VSCODE_START.md']:
+    for name in ['VERSION','README.md','PROJECT_PLAN.md','DATA_SOURCES.md','requirements.txt','VSCODE_START.md']:
         if (ROOT/name).exists():shutil.copy2(ROOT/name,snapshot/name);sources[name]=sha(ROOT/name)
     inputs={};destination=out/'input_manifests';destination.mkdir()
     for i,manifest in enumerate(manifests):

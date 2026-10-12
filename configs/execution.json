@@ -1,12 +1,15 @@
 {
   "project": "qwen3-vl-visual-understanding",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "framework": "PyTorch",
   "launch": "VS Code integrated terminal/debugger",
   "model": "Qwen/Qwen3-VL-2B-Instruct",
-  "dataset": "procedural-diagnostic-v1",
-  "status": "local-mps-diagnostic-complete",
-  "run_id": "study-20261011-220741",
-  "scope": "8 development-only cases, 4 procedural images; not a benchmark",
-  "cloud_cuda": "not-tested"
+  "dataset": "evalmuse-pilot-v1",
+  "dataset_revision": "fd2087b4bde6486ee1358a4ee546e3ee6c1860a6",
+  "status": "real-human-agreement-complete",
+  "run_id": "real-20261012-101552",
+  "scope": "64 images, 32 prompt groups; public training subset, not official benchmark",
+  "cloud_cuda": "not-tested",
+  "predictions": 128,
+  "unit_tests": 13
 }

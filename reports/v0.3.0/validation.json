@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "run_id": "real-20261012-101552",
+  "predictions": 128,
+  "source_files_verified": 26,
+  "input_manifests_verified": 3,
+  "public_outputs_sha256": "9e3e6f429c3549cd94eef6825b18f2ba3a9dee652b6ee853ee382dae687c0bc2",
+  "checks": [
+    "snapshot hashes",
+    "prediction completeness",
+    "input identity",
+    "PyTorch score tensors",
+    "public summary equality",
+    "export field boundary"
+  ]
+}

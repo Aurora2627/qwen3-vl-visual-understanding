@@ -1,0 +1,8 @@
+{
+  "device": "mps",
+  "mps_available": true,
+  "dtype": "torch.float16",
+  "mps_allocated_bytes_final": 4255064832,
+  "mps_driver_bytes_final": 14291582976,
+  "memory_note": "End-of-run allocation, not peak memory"
+}
