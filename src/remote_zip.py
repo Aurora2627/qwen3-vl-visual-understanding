@@ -4,6 +4,7 @@ Pin repository revision; validate every Content-Range and byte count. ZIP CRC32
 checks extracted members; whole-archive LFS SHA256 is NOT verified by partial reads.
 """
 import io
+from platform_tools import curl_executable
 import re
 import subprocess
 from pathlib import Path
@@ -46,7 +47,7 @@ class RangeZip(io.RawIOBase):
         url = self.base_url+'/'+item['rfilename']+'?range='+str(start)+'-'+str(end)
         for attempt in range(3):
             try:
-                subprocess.run(['/usr/bin/curl', '-fL', '--http1.1', '--connect-timeout', '20',
+                subprocess.run([curl_executable(), '-fL', '--http1.1', '--connect-timeout', '20',
                     '--max-time', '120', '--max-filesize', str(self.block_size),
                     '-r', str(start)+'-'+str(end), '-D', str(header), url, '-o', str(temporary)],
                     check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

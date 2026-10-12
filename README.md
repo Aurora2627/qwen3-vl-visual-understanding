@@ -1,5 +1,7 @@
 # Qwen3-VL 视觉生成结果评测与诊断
 
+当前开发环境：Windows + CUDA，Mac 通过 VS Code Remote SSH 编辑。模型入口默认使用 NVIDIA GPU。启动步骤见 [VSCODE_START.md](VSCODE_START.md)，兼容性记录见 [本版检查](reports/v0.4.1/compatibility.json)。下文历史 MPS 指标仍描述原实验。
+
 目标：判断生成图片是否满足原始指令，输出逐条件判断与可见证据，并研究评估器的误判、拒答和输入依赖。
 
 ## 当前实现

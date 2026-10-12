@@ -6,7 +6,7 @@ from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
 
 
 class QwenJudge:
-    def __init__(self, directory, device='mps'):
+    def __init__(self, directory, device='cuda'):
         if device == 'mps' and not torch.backends.mps.is_available():
             raise RuntimeError('MPS unavailable in this process; run from VS Code or explicitly select CPU')
         if device == 'cuda' and not torch.cuda.is_available():

@@ -40,7 +40,7 @@ def validate(records):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='mps')
+    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='cuda')
     parser.add_argument('--output',default=None)
     parser.add_argument('--split',choices=['development','heldout','all'],default='all')
     parser.add_argument('--max-new-tokens',type=int,default=512)

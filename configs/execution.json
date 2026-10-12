@@ -1,8 +1,8 @@
 {
   "project": "qwen3-vl-visual-understanding",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "framework": "PyTorch",
-  "launch": "VS Code integrated terminal/debugger",
+  "launch": "VS Code Remote SSH terminal/debugger",
   "model": "Qwen/Qwen3-VL-2B-Instruct",
   "dataset": "evalmuse-pilot-v2",
   "dataset_revision": "fd2087b4bde6486ee1358a4ee546e3ee6c1860a6",
@@ -14,5 +14,9 @@
   "cuda_local": "tested: RTX 4060 Laptop 8GB, torch 2.8.0+cu126",
   "unit_tests": 23,
   "image_protocol_records": 192,
-  "actual_generation_calls": 428
+  "actual_generation_calls": 428,
+  "default_device": "cuda",
+  "local_device": "cuda",
+  "cuda_compatibility": "passed: RTX 4060 Laptop 8GB",
+  "compatibility_tests": 23
 }

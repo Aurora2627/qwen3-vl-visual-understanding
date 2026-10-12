@@ -25,7 +25,7 @@ def main():
     from temperature_calibration import fit_temperature, calibration_metrics, vote_distribution
     from run_real_study import validate, Tee
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='mps')
+    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='cuda')
     parser.add_argument('--output',default=None)
     args = parser.parse_args()
     manifest = ROOT/'data/processed/evalmuse-pilot-v2/manifest.jsonl'

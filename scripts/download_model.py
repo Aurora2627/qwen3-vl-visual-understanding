@@ -1,10 +1,13 @@
 """Download official Qwen3-VL weights with pinned revision and SHA256 checks."""
 import concurrent.futures,hashlib,json,re,subprocess,time
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+from platform_tools import curl_executable
 ROOT=Path(__file__).resolve().parents[1]
 REPO='Qwen/Qwen3-VL-2B-Instruct'
 def curl(url,path,extra=()):
-    subprocess.run(['/usr/bin/curl','-f','-L','--http1.1','--connect-timeout','20','--max-time','120','--retry','2','--retry-delay','2',*extra,url,'-o',str(path)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
+    subprocess.run([curl_executable(),'-f','-L','--http1.1','--connect-timeout','20','--max-time','120','--retry','2','--retry-delay','2',*extra,url,'-o',str(path)],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
 def sha(path):
     digest=hashlib.sha256()
     with path.open('rb') as f:

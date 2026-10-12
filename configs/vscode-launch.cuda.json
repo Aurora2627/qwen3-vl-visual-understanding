@@ -1,0 +1,158 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CUDA preflight",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/check_cuda.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--output",
+        "runs/${input:runName}"
+      ]
+    },
+    {
+      "name": "Project tests",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "module": "unittest",
+      "args": [
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1"
+      }
+    },
+    {
+      "name": "CUDA synthetic diagnostics",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/run_study.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--device",
+        "cuda",
+        "--output",
+        "runs/${input:runName}"
+      ]
+    },
+    {
+      "name": "CUDA human-agreement study",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/run_real_study.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--device",
+        "cuda",
+        "--output",
+        "runs/${input:runName}"
+      ]
+    },
+    {
+      "name": "CUDA fixed-choice calibration study",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/run_choice_study.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--device",
+        "cuda",
+        "--output",
+        "runs/${input:runName}"
+      ]
+    },
+    {
+      "name": "CUDA pretrained inference smoke",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/smoke_cuda.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--output",
+        "runs/${input:runName}"
+      ]
+    },
+    {
+      "name": "CUDA pretrained inference smoke",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/smoke_cuda.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "subProcess": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_DISABLE_XET": "1"
+      },
+      "args": [
+        "--output",
+        "runs/${input:runName}"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "runName",
+      "type": "promptString",
+      "description": "New run folder; existing outputs are never overwritten",
+      "default": "cuda-check-01"
+    }
+  ]
+}

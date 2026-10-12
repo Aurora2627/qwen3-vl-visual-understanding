@@ -2,12 +2,15 @@
 import json
 import subprocess
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+from platform_tools import curl_executable
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = 'DY-Evalab/EvalMuse'
 
 def fetch(url, destination):
-    subprocess.run(['/usr/bin/curl', '-fL', '--http1.1', '--connect-timeout', '20',
+    subprocess.run([curl_executable(), '-fL', '--http1.1', '--connect-timeout', '20',
                     '--max-time', '180', '--retry', '3', '--retry-all-errors', url, '-o', str(destination)],
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 

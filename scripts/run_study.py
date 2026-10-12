@@ -16,7 +16,7 @@ from run_record import snapshot_run
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='mps')
+    parser.add_argument('--device',choices=['mps','cpu','cuda'],default='cuda')
     parser.add_argument('--output',default=None)
     parser.add_argument('--limit',type=int,default=8)
     parser.add_argument('--groups',nargs='+',default=['direct','decomposed','mismatched_image','no_image'],
