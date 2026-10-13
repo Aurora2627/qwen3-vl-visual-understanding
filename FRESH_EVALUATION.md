@@ -1,6 +1,6 @@
 # 新指令评测与视觉依赖诊断
 
-在 Windows 的 VS Code Remote SSH 中运行，选择 multimodal-gpu Python 3.9.18（PyTorch 2.8.0+cu126）。Mac 只负责连接。
+在 Windows 的 VS Code 中运行，选择项目隔离环境 Python 3.9.18（PyTorch 2.8.0+cu126）。
 
 本流程冻结 v0.5.0 的 LoRA checkpoint，不继续训练。抽取 16 个历史指令之外的新指令组、32 张图片、128 条条件；按固定种子哈希排序，不按模型输出或标签分数挑选。下载后检查图片哈希。来自 EvalMuse 公开训练划分，不是官方测试集。
 

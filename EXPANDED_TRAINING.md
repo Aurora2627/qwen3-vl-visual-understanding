@@ -1,6 +1,6 @@
 # 扩充训练与封存测试运行说明
 
-当前使用 Windows RTX4060 Laptop 8GB、PyTorch CUDA。Mac 仅作 VS Code Remote SSH 客户端。项目代码在 D:/career-projects/qwen3-vl-visual-understanding；LLaVA 代码在另一个独立仓库 D:/career-projects/document-vqa。总入口 D:/career-projects/PROJECTS.md，可分别打开 Qwen3-VL.code-workspace / LLaVA.code-workspace。
+使用 Windows RTX 4060 Laptop 8GB、PyTorch CUDA 和项目专用虚拟环境。在 VS Code 打开本仓库文件夹，选择该环境的 Python 解释器；无需固定盘符或工作区名称。
 
 ## 本轮问题
 
@@ -20,7 +20,7 @@
 
 完整自动流程源码 scripts/run_expanded_study.py：测试 → 数据准备 → 8元素训练兼容性检查 → 两种正式训练及新进程重载 → 验证选模与锁定 → 封存测试。当前实际由 VS Code 集成终端通过 Windows Start-Process 启动独立后台进程，用于减少远程窗口关闭导致中断的风险；本轮未主动断开连接验证后台任务存活，重连后仍应检查PID；stdout/stderr 和每个stage的日志分别落盘。调试器直接运行适合排错，远程窗口关闭可能中止这类前台任务。
 
-活动任务记录 D:/career-projects/cuda-update-20261012/active-stage7-study.json，包含 run/evidence/pid。先检查进程、active-step.json、steps.json、FAILED.json和completed.json再决定后续操作；不要重复启动覆盖目录。后台任务不会自行重复或定时运行。
+本机活动任务记录包含 run/evidence/pid；其位置由实际启动方式决定。先检查进程、active-step.json、steps.json、FAILED.json和completed.json再决定后续操作；不要重复启动覆盖目录。后台任务不会自行重复或定时运行。
 
 ## 证据
 
