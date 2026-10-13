@@ -1,0 +1,272 @@
+{
+  "scope": "Previously unused project-evaluation prompts from public train split; not official benchmark; no pretraining-contamination guarantee",
+  "images": 32,
+  "groups": 16,
+  "elements": 128,
+  "metrics": {
+    "base_image": {
+      "examples": 128,
+      "human_ties": 0,
+      "vote_nll": 1.7686655419336974,
+      "vote_brier": 0.6382832587631266,
+      "majority_accuracy": 0.65625,
+      "balanced_accuracy": 0.6351351351351351,
+      "majority_class_counts_fail_pass": [
+        54,
+        74
+      ]
+    },
+    "lora_image": {
+      "examples": 128,
+      "human_ties": 0,
+      "vote_nll": 1.4006654509635947,
+      "vote_brier": 0.6382687862560854,
+      "majority_accuracy": 0.640625,
+      "balanced_accuracy": 0.6241241241241241,
+      "majority_class_counts_fail_pass": [
+        54,
+        74
+      ]
+    },
+    "base_text": {
+      "examples": 128,
+      "human_ties": 0,
+      "vote_nll": 2.2158933713104942,
+      "vote_brier": 0.7065268932765076,
+      "majority_accuracy": 0.625,
+      "balanced_accuracy": 0.5880880880880881,
+      "majority_class_counts_fail_pass": [
+        54,
+        74
+      ]
+    },
+    "lora_text": {
+      "examples": 128,
+      "human_ties": 0,
+      "vote_nll": 1.6616577940362471,
+      "vote_brier": 0.6901867988241319,
+      "majority_accuracy": 0.59375,
+      "balanced_accuracy": 0.5710710710710711,
+      "majority_class_counts_fail_pass": [
+        54,
+        74
+      ]
+    },
+    "train_prior": {
+      "examples": 128,
+      "human_ties": 0,
+      "vote_nll": 0.6964815816456592,
+      "vote_brier": 0.5030958387586796,
+      "majority_accuracy": 0.578125,
+      "balanced_accuracy": 0.5,
+      "majority_class_counts_fail_pass": [
+        54,
+        74
+      ]
+    }
+  },
+  "paired_group_bootstrap": {
+    "base_image__vs__lora_image": {
+      "groups": 16,
+      "repetitions": 2000,
+      "seed": 20261013,
+      "metrics": {
+        "vote_nll": {
+          "right_minus_left": -0.36800009097010267,
+          "ci95": [
+            -0.5541479210191704,
+            -0.1870136428927267
+          ],
+          "valid_replicates": 2000
+        },
+        "vote_brier": {
+          "right_minus_left": -1.4472507041229932e-05,
+          "ci95": [
+            -0.024012451252134137,
+            0.024031779509531503
+          ],
+          "valid_replicates": 2000
+        },
+        "majority_accuracy": {
+          "right_minus_left": -0.015625,
+          "ci95": [
+            -0.0546875,
+            0.017241379310344862
+          ],
+          "valid_replicates": 2000
+        },
+        "balanced_accuracy": {
+          "right_minus_left": -0.011011011011010985,
+          "ci95": [
+            -0.05084745762711862,
+            0.02499999999999991
+          ],
+          "valid_replicates": 2000
+        }
+      }
+    },
+    "base_text__vs__base_image": {
+      "groups": 16,
+      "repetitions": 2000,
+      "seed": 20261013,
+      "metrics": {
+        "vote_nll": {
+          "right_minus_left": -0.44722782937679684,
+          "ci95": [
+            -1.277130936512306,
+            0.29039672628948887
+          ],
+          "valid_replicates": 2000
+        },
+        "vote_brier": {
+          "right_minus_left": -0.068243634513381,
+          "ci95": [
+            -0.27596225029416854,
+            0.11196472989860062
+          ],
+          "valid_replicates": 2000
+        },
+        "majority_accuracy": {
+          "right_minus_left": 0.03125,
+          "ci95": [
+            -0.09836065573770492,
+            0.18103448275862066
+          ],
+          "valid_replicates": 2000
+        },
+        "balanced_accuracy": {
+          "right_minus_left": 0.047047047047046986,
+          "ci95": [
+            -0.10197368421052627,
+            0.1833543505674653
+          ],
+          "valid_replicates": 2000
+        }
+      }
+    },
+    "lora_text__vs__lora_image": {
+      "groups": 16,
+      "repetitions": 2000,
+      "seed": 20261013,
+      "metrics": {
+        "vote_nll": {
+          "right_minus_left": -0.2609923430726524,
+          "ci95": [
+            -0.7878269629995212,
+            0.1726398943902987
+          ],
+          "valid_replicates": 2000
+        },
+        "vote_brier": {
+          "right_minus_left": -0.05191801256804651,
+          "ci95": [
+            -0.21708389548161783,
+            0.10018374536797214
+          ],
+          "valid_replicates": 2000
+        },
+        "majority_accuracy": {
+          "right_minus_left": 0.046875,
+          "ci95": [
+            -0.07692307692307687,
+            0.1724137931034483
+          ],
+          "valid_replicates": 2000
+        },
+        "balanced_accuracy": {
+          "right_minus_left": 0.05305305305305297,
+          "ci95": [
+            -0.08743842364532017,
+            0.17575757575757578
+          ],
+          "valid_replicates": 2000
+        }
+      }
+    },
+    "train_prior__vs__base_image": {
+      "groups": 16,
+      "repetitions": 2000,
+      "seed": 20261013,
+      "metrics": {
+        "vote_nll": {
+          "right_minus_left": 1.0721839602880383,
+          "ci95": [
+            0.5557156849555476,
+            1.5673325949253312
+          ],
+          "valid_replicates": 2000
+        },
+        "vote_brier": {
+          "right_minus_left": 0.13518742000444706,
+          "ci95": [
+            -0.030035350314862597,
+            0.29209704449489227
+          ],
+          "valid_replicates": 2000
+        },
+        "majority_accuracy": {
+          "right_minus_left": 0.078125,
+          "ci95": [
+            -0.06338028169014087,
+            0.24561403508771928
+          ],
+          "valid_replicates": 2000
+        },
+        "balanced_accuracy": {
+          "right_minus_left": 0.1351351351351351,
+          "ci95": [
+            0.009419152276295084,
+            0.24623842592592593
+          ],
+          "valid_replicates": 2000
+        }
+      }
+    }
+  },
+  "train_prior": 0.6080729166666662,
+  "train_manifest_sha256": "4a6733a955d857af14b49a52a8fdb830b8ee9dcaf47522a088fa06e2ae8629b5",
+  "checkpoint_sha256": "ba96eda96ac2df9077c75ce01bf5ff3077e55231f33d1f1c036583d213fe6868",
+  "dataset_sha256": "536940542250da63172a416ef158a48f83df82f2cbe24cbb2bdd3a35e625b026",
+  "seconds": 190.1120013,
+  "peak_allocated_bytes": 4284899840,
+  "precision": "BF16 frozen base / FP32 LoRA",
+  "complete": true,
+  "runtime_source_sha256": {
+    "src/fresh_evaluation.py": "a1499fcc034ed94074e102472c346ac8247f2c30b61084827d6d63277c5c5e14",
+    "src/element_lora.py": "af5f2b5e15606169bb315ef0d800f17c2eb80f6be7b41d1818d7b49b365beabb",
+    "src/element_training.py": "1a283ba6e0754bf032d22ad61d508211e61d17c19a13638b1e61e9b3c4f72030",
+    "src/element_data.py": "a339052b05a91ac58001b6dad3bae34ba14fccb11360171e986ae9bbda460b17",
+    "src/modeling.py": "dfad28532db894b85b9dc87fa856e26ef61a43cd7f9e6de5ed32e146ed711c19",
+    "src/constrained_choice.py": "fc19ccdac8dd32a73499fb393ca48e25bce27425153015e1fd51e59c0bc1417a",
+    "scripts/evaluate_fresh_elements.py": "265629420e5f4e385fa51e5f4606a2ca791440c01111d92a7f74d2c912a09e65"
+  },
+  "run_name": "element-fresh-20261013-082539",
+  "predictions_sha256": "9e8e9cd48cc015be415f13500b3a5d9acc2e7ed9077835b142e62f1ec5df4b1e",
+  "config": {
+    "dataset": "D:\\career-projects\\qwen3-vl-visual-understanding\\data\\processed\\evalmuse-fresh-20261013-082539",
+    "checkpoint_sha256": "ba96eda96ac2df9077c75ce01bf5ff3077e55231f33d1f1c036583d213fe6868",
+    "elements_sha256": "536940542250da63172a416ef158a48f83df82f2cbe24cbb2bdd3a35e625b026",
+    "protocol": "Binary PASS/FAIL; BF16 base/FP32 adapter; 224px; same prompt; text-only has no image token or pixels",
+    "conditions": [
+      "base_image",
+      "lora_image",
+      "base_text",
+      "lora_text",
+      "train_prior"
+    ],
+    "bootstrap": 2000,
+    "seed": 20261013,
+    "checkpoint_fixed_before_download": true
+  },
+  "environment": {
+    "python": "3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]",
+    "executable": "D:\\career-projects\\envs\\multimodal-gpu\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.6",
+      "Pillow": "11.3.0",
+      "numpy": "2.0.2"
+    }
+  }
+}

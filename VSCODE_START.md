@@ -1,5 +1,9 @@
 # Windows CUDA / VS Code 使用说明
 
+## v0.6 新指令对照评测
+
+Windows Remote SSH 中选择 multimodal-gpu（D:/career-projects/envs/multimodal-gpu/Scripts/python.exe）。本机launch已合并 CUDA fresh element evaluation (locked adapter)，便携模板见 configs/vscode-launch.fresh-evaluation.json。输出必须为新目录，已有实验不可覆盖。详见 FRESH_EVALUATION.md。
+
 当前维护与求职展示以 main 分支的 Windows / NVIDIA CUDA 版本为准。后续编写、调试、测试与实验均通过 VS Code Remote SSH 在 Windows 完成；Mac 仅作为远程连接终端。旧提交、旧标签和已完成实验保留真实历史，不代表当前默认运行方式。
 
 当前运行入口与验证范围见 [CURRENT_STATUS.md](CURRENT_STATUS.md)。

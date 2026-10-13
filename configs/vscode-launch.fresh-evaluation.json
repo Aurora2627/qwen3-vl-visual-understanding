@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CUDA fresh element evaluation (locked adapter)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/evaluate_fresh_elements.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "args": [
+        "--dataset",
+        "${workspaceFolder}/data/processed/${input:freshDataset}",
+        "--checkpoint",
+        "${workspaceFolder}/runs/${input:freshCheckpointRun}/adapter.pt",
+        "--model-dir",
+        "${workspaceFolder}/data/cache/local-qwen3-vl/89644892e4d85e24eaac8bacfd4f463576704203",
+        "--output",
+        "${workspaceFolder}/runs/${input:freshEvaluationRun}"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "freshDataset",
+      "type": "promptString",
+      "description": "已经完整准备的评测数据文件夹",
+      "default": "evalmuse-fresh-20261013-082539"
+    },
+    {
+      "id": "freshCheckpointRun",
+      "type": "promptString",
+      "description": "已锁定的 LoRA 训练目录",
+      "default": "element-lora-pilot-20261012-215837"
+    },
+    {
+      "id": "freshEvaluationRun",
+      "type": "promptString",
+      "description": "新的输出目录名，不得覆盖已有实验",
+      "default": "element-fresh-debug-new"
+    }
+  ]
+}
