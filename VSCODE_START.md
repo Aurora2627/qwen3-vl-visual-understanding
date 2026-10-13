@@ -1,5 +1,11 @@
 # Windows CUDA / VS Code 使用说明
 
+## v0.7 扩充数据训练
+
+打开Windows总目录的Qwen3-VL.code-workspace，或multimodal.code-workspace中的 Qwen3-VL · 生成图符合度评测。LLaVA独立入口是LLaVA.code-workspace。
+
+选择multimodal-gpu解释器与 Qwen3-VL CUDA expanded element training，模板configs/vscode-launch.expanded-elements.json，数据目录element-corpus-v2-20261013-185835。新输出禁止覆盖旧实验。完整后台流程及状态检查见EXPANDED_TRAINING.md。
+
 ## v0.6 新指令对照评测
 
 Windows Remote SSH 中选择 multimodal-gpu（D:/career-projects/envs/multimodal-gpu/Scripts/python.exe）。本机launch已合并 CUDA fresh element evaluation (locked adapter)，便携模板见 configs/vscode-launch.fresh-evaluation.json。输出必须为新目录，已有实验不可覆盖。详见 FRESH_EVALUATION.md。

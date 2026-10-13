@@ -10,9 +10,9 @@
   "default_device": "cuda",
   "local_device": "cuda",
   "cuda_compatibility": "passed: RTX 4060 Laptop 8GB",
-  "compatibility_tests": 36,
-  "current_version": "0.6.0",
-  "current_stage": "Fresh prompt-disjoint element evaluation and text-only controls",
+  "compatibility_tests": 43,
+  "current_version": "0.7.0",
+  "current_stage": "Expanded data loss comparison and sealed test",
   "element_lora": {
     "precision": "bf16",
     "train_images": 24,
@@ -25,12 +25,12 @@
     "validation_improved": false,
     "report": "reports/v0.5.0/RESULTS.md"
   },
-  "version": "0.6.0",
+  "version": "0.7.0",
   "status": "completed",
-  "dataset": "evalmuse-fresh-20261013-082539",
-  "run_id": "element-fresh-20261013-082539",
-  "unit_tests": 36,
-  "scope": "Previously unused project evaluation from public train subset; not official benchmark",
+  "dataset": "element-corpus-v2-20261013-185835",
+  "run_id": "expanded-study-20261013-185835",
+  "unit_tests": 43,
+  "scope": "Unseen project prompt groups from public train subset; validation-only selection; sealed final test",
   "previous_choice_study": {
     "version": "0.4.1",
     "dataset": "evalmuse-pilot-v2",
@@ -41,7 +41,7 @@
     "image_protocol_records": 192,
     "actual_generation_calls": 428
   },
-  "fresh_evaluation": {
+  "previous_fresh_evaluation": {
     "images": 32,
     "groups": 16,
     "elements": 128,
@@ -52,5 +52,40 @@
     "vote_nll_improved": true,
     "visual_accuracy_benefit_ci_excludes_zero": false,
     "report": "reports/v0.6.0/RESULTS.md"
+  },
+  "expanded_study": {
+    "split_counts": {
+      "train": {
+        "images": 96,
+        "groups": 48,
+        "elements": 430
+      },
+      "validation": {
+        "images": 32,
+        "groups": 16,
+        "elements": 160
+      },
+      "sealed_test": {
+        "images": 32,
+        "groups": 16,
+        "elements": 192
+      }
+    },
+    "loss_modes": [
+      "full-vocabulary",
+      "binary-conditional"
+    ],
+    "selected_loss_mode": "full-vocabulary",
+    "selection": "development validation vote NLL",
+    "sealed_test_after_checkpoint_hash_lock": true,
+    "test_model_forward_calls": 768,
+    "test_accuracy_ci_excludes_zero_positive": false,
+    "report": "reports/v0.7.0/RESULTS.md",
+    "calibration_baseline": {
+      "temperature": 7.0420721085052085,
+      "fitted_on": "development validation only",
+      "locked_before_test": true,
+      "test_vote_nll": 0.6170697424221923
+    }
   }
 }

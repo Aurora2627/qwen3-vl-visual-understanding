@@ -49,3 +49,13 @@ def binary_metrics(records):
         'majority_accuracy': sum(correct)/sum(counts) if sum(counts) else None,
         'balanced_accuracy': sum(recalls)/2 if None not in recalls else None,
         'majority_class_counts_fail_pass': counts}
+
+
+def binary_vote_loss(logits, choice_ids, p_pass):
+    """Conditional binary soft-label CE, aligned with the PASS/FAIL evaluator."""
+    if logits.ndim != 1 or len(choice_ids)!=2 or len(set(choice_ids))!=2:
+        raise ValueError('Need a vocabulary vector and two distinct choices')
+    if not 0 <= p_pass <= 1 or any(i<0 or i>=logits.numel() for i in choice_ids):
+        raise ValueError('Invalid target or choice token')
+    logp=torch.log_softmax(logits[choice_ids].float(),dim=-1)
+    return -(p_pass*logp[0]+(1-p_pass)*logp[1])

@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Qwen3-VL CUDA expanded element training",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${config:python.defaultInterpreterPath}",
+      "program": "${workspaceFolder}/scripts/train_element_lora.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONNOUSERSITE": "1",
+        "HF_HUB_OFFLINE": "1",
+        "TRANSFORMERS_OFFLINE": "1"
+      },
+      "args": [
+        "--model-dir",
+        "${workspaceFolder}/data/cache/local-qwen3-vl/89644892e4d85e24eaac8bacfd4f463576704203",
+        "--model-revision",
+        "89644892e4d85e24eaac8bacfd4f463576704203",
+        "--dataset",
+        "${workspaceFolder}/data/processed/${input:expandedDataset}",
+        "--output",
+        "${workspaceFolder}/runs/${input:expandedRun}",
+        "--loss-mode",
+        "${input:expandedLoss}",
+        "--learning-rate",
+        "0.00005",
+        "--seed",
+        "20261013",
+        "--precision",
+        "bf16"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "expandedDataset",
+      "type": "promptString",
+      "description": "已完成的扩充数据目录",
+      "default": "element-corpus-v2-20261013-185835"
+    },
+    {
+      "id": "expandedRun",
+      "type": "promptString",
+      "description": "新的实验目录（不可覆盖）",
+      "default": "expanded-debug-new"
+    },
+    {
+      "id": "expandedLoss",
+      "type": "pickString",
+      "description": "训练损失",
+      "options": [
+        "binary-conditional",
+        "full-vocabulary"
+      ],
+      "default": "binary-conditional"
+    }
+  ]
+}

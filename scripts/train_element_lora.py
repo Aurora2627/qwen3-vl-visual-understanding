@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT/'src'))
 from run_record import snapshot_run, sha
 from element_data import read_jsonl, assert_disjoint
 from element_lora import inject_lora, adapters, set_enabled, adapter_state, load_adapter_state
-from element_training import make_inputs, human_vote_loss, binary_metrics
+from element_training import make_inputs, human_vote_loss, binary_vote_loss, binary_metrics
 from constrained_choice import resolve_choice_ids
 
 
@@ -42,6 +42,7 @@ def main():
     parser.add_argument('--max-edge', type=int, default=224)
     parser.add_argument('--seed', type=int, default=20261012)
     parser.add_argument('--precision', choices=['bf16','fp16'], default='bf16')
+    parser.add_argument('--loss-mode', choices=['full-vocabulary','binary-conditional'], default='full-vocabulary')
     parser.add_argument('--reload-checkpoint', type=Path)
     args = parser.parse_args()
     if args.epochs < 1 or args.accumulation < 1 or args.max_edge < 112 or args.learning_rate <= 0 or args.max_train < 0 or args.max_validation < 0:
@@ -62,7 +63,7 @@ def main():
             raise ValueError('Image hash mismatch')
     config = {k:str(v) if isinstance(v,Path) else v for k,v in vars(args).items()}
     config.update(device='cuda', task='human-vote answer-token LoRA', choices=['PASS','FAIL'],
-        objective='Full-vocabulary next-token cross-entropy with soft binary human-vote target',
+        objective=('Binary-conditional soft-vote cross-entropy' if args.loss_mode=='binary-conditional' else 'Full-vocabulary next-token cross-entropy with soft binary human-vote target'),
         scope='Observed development train/validation only; no independent-test or generalization claim',
         train_examples=len(train), validation_examples=len(validation))
     manifests = [train_path, val_path, args.dataset/'dataset-record.json']
@@ -149,6 +150,7 @@ def execute(args, config, train, validation, out):
             raise ValueError('Checkpoint dataset fingerprint mismatch')
         for key in ('rank','alpha','last_layers','max_edge','seed','max_validation','precision'):
             if checkpoint['config'][key] != config[key]: raise ValueError('Reload configuration mismatch: '+key)
+        if checkpoint['config'].get('loss_mode','full-vocabulary') != args.loss_mode: raise ValueError('Reload loss mode mismatch')
         load_adapter_state(model,checkpoint['adapter'])
         metrics,records = evaluate('fresh-reload')
         previous = json.loads((args.reload_checkpoint.parent/'selected-predictions.json').read_text(encoding='utf-8'))
@@ -190,7 +192,7 @@ def execute(args, config, train, validation, out):
                 optimizer.zero_grad(set_to_none=True)
                 total_loss = 0.
                 for row in batch:
-                    loss = human_vote_loss(logits(row),choice_ids,row['p_pass'])
+                    loss = binary_vote_loss(logits(row),choice_ids,row['p_pass']) if args.loss_mode=='binary-conditional' else human_vote_loss(logits(row),choice_ids,row['p_pass'])
                     if not torch.isfinite(loss): raise ValueError('Nonfinite loss')
                     total_loss += loss.item()/len(batch)
                     scaler.scale(loss/len(batch)).backward()

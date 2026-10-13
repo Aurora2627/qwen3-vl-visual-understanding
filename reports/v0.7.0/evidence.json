@@ -1,0 +1,875 @@
+{
+  "fresh_process_reloads": {
+    "full-vocabulary": {
+      "scope": "Observed development train/validation only; no independent-test or generalization claim",
+      "reload_passed": true,
+      "max_logit_difference": 0.0,
+      "metrics": {
+        "examples": 160,
+        "human_ties": 9,
+        "vote_nll": 0.8367881605820486,
+        "vote_brier": 0.5185115676704589,
+        "majority_accuracy": 0.7086092715231788,
+        "balanced_accuracy": 0.6353359173126615,
+        "majority_class_counts_fail_pass": [
+          43,
+          108
+        ]
+      },
+      "peak_allocated_bytes": 4285415936,
+      "peak_reserved_bytes": 4307550208
+    },
+    "binary-conditional": {
+      "scope": "Observed development train/validation only; no independent-test or generalization claim",
+      "reload_passed": true,
+      "max_logit_difference": 0.0,
+      "metrics": {
+        "examples": 160,
+        "human_ties": 9,
+        "vote_nll": 0.8414219006635768,
+        "vote_brier": 0.519249899719323,
+        "majority_accuracy": 0.7086092715231788,
+        "balanced_accuracy": 0.6353359173126615,
+        "majority_class_counts_fail_pass": [
+          43,
+          108
+        ]
+      },
+      "peak_allocated_bytes": 4285415936,
+      "peak_reserved_bytes": 4307550208
+    }
+  },
+  "calibration_baseline": {
+    "lock": {
+      "registered_before_final_test": 1791891067.6072497,
+      "baseline_predictions_sha256": "528795160404951da6cb4614131f123e12572408d6c8f93dea594c4d0b63e318",
+      "validation_sha256": "0fe7a023a4dc365c8c20bc3f58506036d4a6e31efde3e968ff8f09e730c2295a",
+      "scope": "Calibration-only comparator, no adapter selection or test labels used",
+      "policy": "Fit one positive temperature on development validation; apply fixed value once to sealed-test base-image logits",
+      "fit": {
+        "temperature": 7.0420721085052085,
+        "validation_unclipped_nll": 0.6020405382327577,
+        "grid_points": 1002,
+        "bounds": [
+          0.25,
+          32.0
+        ],
+        "boundary_selected": false,
+        "criterion": "development soft-vote binary NLL only"
+      },
+      "validation_metrics": {
+        "examples": 160,
+        "human_ties": 9,
+        "vote_nll": 0.6020405382327578,
+        "vote_brier": 0.4152719504100227,
+        "majority_accuracy": 0.7615894039735099,
+        "balanced_accuracy": 0.6653746770025839,
+        "majority_class_counts_fail_pass": [
+          43,
+          108
+        ]
+      },
+      "locked_at": 1791891067.7304444
+    },
+    "test_metrics": {
+      "examples": 192,
+      "human_ties": 3,
+      "vote_nll": 0.6170697424221923,
+      "vote_brier": 0.4259320573731375,
+      "majority_accuracy": 0.7195767195767195,
+      "balanced_accuracy": 0.6900705052878966,
+      "majority_class_counts_fail_pass": [
+        74,
+        115
+      ]
+    },
+    "calibrated_base_vs_adapter": {
+      "groups": 16,
+      "repetitions": 2000,
+      "seed": 20261013,
+      "metrics": {
+        "vote_nll": {
+          "right_minus_left": 0.17348240657156022,
+          "ci95": [
+            0.10461595214272568,
+            0.23257636078329025
+          ],
+          "valid_replicates": 2000
+        },
+        "vote_brier": {
+          "right_minus_left": 0.06700646286778295,
+          "ci95": [
+            0.03011005170336578,
+            0.10742795231866736
+          ],
+          "valid_replicates": 2000
+        },
+        "majority_accuracy": {
+          "right_minus_left": 0.015873015873015928,
+          "ci95": [
+            -0.0326797385620915,
+            0.0625
+          ],
+          "valid_replicates": 2000
+        },
+        "balanced_accuracy": {
+          "right_minus_left": 0.04676850763807283,
+          "ci95": [
+            -0.009740259740259827,
+            0.09399159663865542
+          ],
+          "valid_replicates": 2000
+        }
+      }
+    },
+    "scope": "Supplemental comparator registered and fitted on validation before sealed-test execution; does not affect adapter selection"
+  },
+  "observed_v0_6_diagnostics": {
+    "source_prediction_sha256": "9e8e9cd48cc015be415f13500b3a5d9acc2e7ed9077835b142e62f1ec5df4b1e",
+    "conditions": {
+      "base_image": {
+        "confusion": {
+          "true_fail_pred_fail": 27,
+          "true_fail_pred_pass": 27,
+          "true_pass_pred_fail": 17,
+          "true_pass_pred_pass": 57
+        },
+        "wrong_at_confidence_ge_0_9": 35,
+        "bins": [
+          {
+            "count": 35,
+            "interval": [
+              0.0,
+              0.2
+            ],
+            "mean_probability": 0.03854285521709763,
+            "mean_human_probability": 0.3333333333333333
+          },
+          {
+            "count": 7,
+            "interval": [
+              0.2,
+              0.4
+            ],
+            "mean_probability": 0.31197114501680645,
+            "mean_human_probability": 0.42857142857142855
+          },
+          {
+            "count": 4,
+            "interval": [
+              0.4,
+              0.6
+            ],
+            "mean_probability": 0.4921976774930954,
+            "mean_human_probability": 0.5
+          },
+          {
+            "count": 5,
+            "interval": [
+              0.6,
+              0.8
+            ],
+            "mean_probability": 0.7177535891532898,
+            "mean_human_probability": 0.6666666666666666
+          },
+          {
+            "count": 77,
+            "interval": [
+              0.8,
+              1.0
+            ],
+            "mean_probability": 0.9863218634159534,
+            "mean_human_probability": 0.6493506493506493
+          }
+        ]
+      },
+      "base_text": {
+        "confusion": {
+          "true_fail_pred_fail": 19,
+          "true_fail_pred_pass": 35,
+          "true_pass_pred_fail": 13,
+          "true_pass_pred_pass": 61
+        },
+        "wrong_at_confidence_ge_0_9": 35,
+        "bins": [
+          {
+            "count": 22,
+            "interval": [
+              0.0,
+              0.2
+            ],
+            "mean_probability": 0.07256577982281504,
+            "mean_human_probability": 0.4393939393939395
+          },
+          {
+            "count": 6,
+            "interval": [
+              0.2,
+              0.4
+            ],
+            "mean_probability": 0.3224344750245412,
+            "mean_human_probability": 0.38888888888888884
+          },
+          {
+            "count": 6,
+            "interval": [
+              0.4,
+              0.6
+            ],
+            "mean_probability": 0.45854900280634564,
+            "mean_human_probability": 0.16666666666666666
+          },
+          {
+            "count": 10,
+            "interval": [
+              0.6,
+              0.8
+            ],
+            "mean_probability": 0.6441791892051697,
+            "mean_human_probability": 0.6
+          },
+          {
+            "count": 84,
+            "interval": [
+              0.8,
+              1.0
+            ],
+            "mean_probability": 0.9849471676917303,
+            "mean_human_probability": 0.6071428571428571
+          }
+        ]
+      },
+      "lora_image": {
+        "confusion": {
+          "true_fail_pred_fail": 28,
+          "true_fail_pred_pass": 26,
+          "true_pass_pred_fail": 20,
+          "true_pass_pred_pass": 54
+        },
+        "wrong_at_confidence_ge_0_9": 35,
+        "bins": [
+          {
+            "count": 41,
+            "interval": [
+              0.0,
+              0.2
+            ],
+            "mean_probability": 0.03951691452425621,
+            "mean_human_probability": 0.3414634146341463
+          },
+          {
+            "count": 6,
+            "interval": [
+              0.2,
+              0.4
+            ],
+            "mean_probability": 0.27720461785793304,
+            "mean_human_probability": 0.5555555555555555
+          },
+          {
+            "count": 5,
+            "interval": [
+              0.4,
+              0.6
+            ],
+            "mean_probability": 0.5062418878078461,
+            "mean_human_probability": 0.7333333333333333
+          },
+          {
+            "count": 6,
+            "interval": [
+              0.6,
+              0.8
+            ],
+            "mean_probability": 0.737464596827825,
+            "mean_human_probability": 0.5555555555555555
+          },
+          {
+            "count": 70,
+            "interval": [
+              0.8,
+              1.0
+            ],
+            "mean_probability": 0.9792783898966653,
+            "mean_human_probability": 0.6523809523809524
+          }
+        ]
+      },
+      "lora_text": {
+        "confusion": {
+          "true_fail_pred_fail": 23,
+          "true_fail_pred_pass": 31,
+          "true_pass_pred_fail": 21,
+          "true_pass_pred_pass": 53
+        },
+        "wrong_at_confidence_ge_0_9": 36,
+        "bins": [
+          {
+            "count": 32,
+            "interval": [
+              0.0,
+              0.2
+            ],
+            "mean_probability": 0.054812023746308114,
+            "mean_human_probability": 0.37500000000000006
+          },
+          {
+            "count": 12,
+            "interval": [
+              0.2,
+              0.4
+            ],
+            "mean_probability": 0.27256731192270917,
+            "mean_human_probability": 0.5833333333333334
+          },
+          {
+            "count": 6,
+            "interval": [
+              0.4,
+              0.6
+            ],
+            "mean_probability": 0.5207255085309347,
+            "mean_human_probability": 0.3333333333333333
+          },
+          {
+            "count": 4,
+            "interval": [
+              0.6,
+              0.8
+            ],
+            "mean_probability": 0.7282392978668213,
+            "mean_human_probability": 0.8333333333333333
+          },
+          {
+            "count": 74,
+            "interval": [
+              0.8,
+              1.0
+            ],
+            "mean_probability": 0.9724459390382509,
+            "mean_human_probability": 0.617117117117117
+          }
+        ]
+      },
+      "train_prior": {
+        "confusion": {
+          "true_fail_pred_fail": 0,
+          "true_fail_pred_pass": 54,
+          "true_pass_pred_fail": 0,
+          "true_pass_pred_pass": 74
+        },
+        "wrong_at_confidence_ge_0_9": 0,
+        "bins": [
+          {
+            "count": 0,
+            "sum_probability": 0.0,
+            "sum_human_probability": 0.0,
+            "interval": [
+              0.0,
+              0.2
+            ],
+            "mean_probability": null,
+            "mean_human_probability": null
+          },
+          {
+            "count": 0,
+            "sum_probability": 0.0,
+            "sum_human_probability": 0.0,
+            "interval": [
+              0.2,
+              0.4
+            ],
+            "mean_probability": null,
+            "mean_human_probability": null
+          },
+          {
+            "count": 0,
+            "sum_probability": 0.0,
+            "sum_human_probability": 0.0,
+            "interval": [
+              0.4,
+              0.6
+            ],
+            "mean_probability": null,
+            "mean_human_probability": null
+          },
+          {
+            "count": 128,
+            "interval": [
+              0.6,
+              0.8
+            ],
+            "mean_probability": 0.6080729166666666,
+            "mean_human_probability": 0.5468749999999997
+          },
+          {
+            "count": 0,
+            "sum_probability": 0.0,
+            "sum_human_probability": 0.0,
+            "interval": [
+              0.8,
+              1.0
+            ],
+            "mean_probability": null,
+            "mean_human_probability": null
+          }
+        ]
+      }
+    }
+  },
+  "study": {
+    "protocol": {
+      "dataset": "D:\\career-projects\\qwen3-vl-visual-understanding\\data\\processed\\element-corpus-v2-20261013-185835",
+      "loss_modes": [
+        "full-vocabulary",
+        "binary-conditional"
+      ],
+      "seed": 20261013,
+      "epochs": 1,
+      "learning_rate": 5e-05,
+      "selection": "minimum development validation vote NLL across exactly these two runs; ties prefer full-vocabulary",
+      "test": "sealed prompt-disjoint test evaluated once after checkpoint SHA256 lock; no test-dependent retraining",
+      "device": "Windows CUDA",
+      "source_revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+    },
+    "models": {
+      "full-vocabulary": {
+        "run": "D:\\career-projects\\qwen3-vl-visual-understanding\\runs\\expanded-full-vocabulary-20261013-185835",
+        "checkpoint_sha256": "703486020a9b0ac5a34aff33ef4f5f3104628d3363c0128f874a5f681922b52c",
+        "summary": {
+          "scope": "Observed development train/validation only; no independent-test or generalization claim",
+          "baseline": {
+            "examples": 160,
+            "human_ties": 9,
+            "vote_nll": 1.5333342111478312,
+            "vote_brier": 0.5690555954784446,
+            "majority_accuracy": 0.7615894039735099,
+            "balanced_accuracy": 0.6653746770025839,
+            "majority_class_counts_fail_pass": [
+              43,
+              108
+            ]
+          },
+          "selected_validation": {
+            "examples": 160,
+            "human_ties": 9,
+            "vote_nll": 0.8367881605820486,
+            "vote_brier": 0.5185115676704589,
+            "majority_accuracy": 0.7086092715231788,
+            "balanced_accuracy": 0.6353359173126615,
+            "majority_class_counts_fail_pass": [
+              43,
+              108
+            ]
+          },
+          "optimizer_updates": 108,
+          "epochs": 1,
+          "nonzero_B_matrices": 8,
+          "training_seconds": 491.2747936,
+          "in_process_reload_max_logit_difference": 0.0,
+          "peak_allocated_bytes": 4307616768,
+          "peak_reserved_bytes": 4332716032,
+          "independent_test_available": false,
+          "algorithm_improvement_claim": false
+        }
+      },
+      "binary-conditional": {
+        "run": "D:\\career-projects\\qwen3-vl-visual-understanding\\runs\\expanded-binary-conditional-20261013-185835",
+        "checkpoint_sha256": "e0e7f1516063a7d9ee8db22b7d9201350eaad2017307052b28ab0df0834db9ad",
+        "summary": {
+          "scope": "Observed development train/validation only; no independent-test or generalization claim",
+          "baseline": {
+            "examples": 160,
+            "human_ties": 9,
+            "vote_nll": 1.5333342111478312,
+            "vote_brier": 0.5690555954784446,
+            "majority_accuracy": 0.7615894039735099,
+            "balanced_accuracy": 0.6653746770025839,
+            "majority_class_counts_fail_pass": [
+              43,
+              108
+            ]
+          },
+          "selected_validation": {
+            "examples": 160,
+            "human_ties": 9,
+            "vote_nll": 0.8414219006635768,
+            "vote_brier": 0.519249899719323,
+            "majority_accuracy": 0.7086092715231788,
+            "balanced_accuracy": 0.6353359173126615,
+            "majority_class_counts_fail_pass": [
+              43,
+              108
+            ]
+          },
+          "optimizer_updates": 108,
+          "epochs": 1,
+          "nonzero_B_matrices": 8,
+          "training_seconds": 497.03515080000005,
+          "in_process_reload_max_logit_difference": 0.0,
+          "peak_allocated_bytes": 4307616768,
+          "peak_reserved_bytes": 4332716032,
+          "independent_test_available": false,
+          "algorithm_improvement_claim": false
+        }
+      }
+    },
+    "selection": {
+      "chosen_loss_mode": "full-vocabulary",
+      "checkpoint": "D:\\career-projects\\qwen3-vl-visual-understanding\\runs\\expanded-full-vocabulary-20261013-185835\\adapter.pt",
+      "checkpoint_sha256": "703486020a9b0ac5a34aff33ef4f5f3104628d3363c0128f874a5f681922b52c",
+      "validation_comparison": {
+        "full-vocabulary": {
+          "examples": 160,
+          "human_ties": 9,
+          "vote_nll": 0.8367881605820486,
+          "vote_brier": 0.5185115676704589,
+          "majority_accuracy": 0.7086092715231788,
+          "balanced_accuracy": 0.6353359173126615,
+          "majority_class_counts_fail_pass": [
+            43,
+            108
+          ]
+        },
+        "binary-conditional": {
+          "examples": 160,
+          "human_ties": 9,
+          "vote_nll": 0.8414219006635768,
+          "vote_brier": 0.519249899719323,
+          "majority_accuracy": 0.7086092715231788,
+          "balanced_accuracy": 0.6353359173126615,
+          "majority_class_counts_fail_pass": [
+            43,
+            108
+          ]
+        }
+      },
+      "dataset_record_sha256": "6366f69b184c363f374c3a32edfe39059c749c1eb898abf2989b39d957005095",
+      "sealed_test_sha256": "33f93ec68f2ebca80b815dab619bdc9f61d7b75e55e05ad0e48cfb83a8f3bd2f",
+      "criterion": "minimum development validation vote NLL across exactly these two runs; ties prefer full-vocabulary",
+      "locked_before_test": 1791891503.4856644
+    },
+    "final_run": "D:\\career-projects\\qwen3-vl-visual-understanding\\runs\\expanded-final-evaluation-20261013-185835",
+    "dataset": "D:\\career-projects\\qwen3-vl-visual-understanding\\data\\processed\\element-corpus-v2-20261013-185835",
+    "dataset_record": {
+      "seed": 20261014,
+      "groups": 80,
+      "train_groups": 48,
+      "validation_groups": 16,
+      "sealed_test_groups": 16,
+      "revision": "fd2087b4bde6486ee1358a4ee546e3ee6c1860a6",
+      "annotation_sha256": "a3ea6941fd5f727a81fc2bbdd6d2360726c6fdd3d8546213b6a43ae46a26bf86",
+      "historical_manifests": {
+        "data\\processed\\diagnostics-v1\\manifest.jsonl": "7dc4b8e36dbd867aa85287b06576e9444d2ad34f07001a2af09aeb7c8d28b699",
+        "data\\processed\\evalmuse-fresh-20261013-082539\\manifest.jsonl": "3b3c1f6a546059da2eb93b2301611c18cf52105108abc229bb410f20d7a14bf2",
+        "data\\processed\\evalmuse-pilot-v1\\manifest.jsonl": "8fcbf43c693aa99d0a66f722bec1089c3838de0ea36d32b6ee63a0e20e531484",
+        "data\\processed\\evalmuse-pilot-v2\\manifest.jsonl": "87091706e8e0739d3960cf477b0e3e85351c4bd679fe142f01cac4c5857fa360"
+      },
+      "plan": {
+        "loss_modes": [
+          "full-vocabulary",
+          "binary-conditional"
+        ],
+        "epochs": 1,
+        "learning_rate": 5e-05,
+        "seed": 20261013,
+        "rank": 4,
+        "alpha": 8,
+        "last_layers": 4,
+        "max_edge": 224,
+        "precision": "bf16",
+        "selection": "lowest development validation vote NLL across the two fixed training runs; no test used for selection"
+      },
+      "test_policy": "No model execution or error inspection on sealed_test until one adapter is selected on validation and its SHA256 is locked",
+      "official_test": false,
+      "selection": "80 historical-prompt-disjoint groups ordered by seeded hash, two image paths per group; no filtering by score or model output",
+      "split_counts": {
+        "train": {
+          "images": 96,
+          "groups": 48,
+          "elements": 430
+        },
+        "validation": {
+          "images": 32,
+          "groups": 16,
+          "elements": 160
+        },
+        "sealed_test": {
+          "images": 32,
+          "groups": 16,
+          "elements": 192
+        }
+      },
+      "split_sha256": {
+        "train": "a1aa31f372a351fcefd2c92f927639294cfa38fb8ddd7e1490daab9a8c04da3a",
+        "validation": "0fe7a023a4dc365c8c20bc3f58506036d4a6e31efde3e968ff8f09e730c2295a",
+        "sealed_test": "33f93ec68f2ebca80b815dab619bdc9f61d7b75e55e05ad0e48cfb83a8f3bd2f"
+      },
+      "downloaded_range_bytes": 385875968,
+      "integrity": "Pinned revision and annotation SHA256; validated HTTP ranges and ZIP CRC32; extracted image SHA256; not whole archive SHA256"
+    },
+    "final_results": {
+      "scope": "Previously unused project-evaluation prompts from public train split; not official benchmark; no pretraining-contamination guarantee",
+      "images": 32,
+      "groups": 16,
+      "elements": 192,
+      "metrics": {
+        "base_image": {
+          "examples": 192,
+          "human_ties": 3,
+          "vote_nll": 1.2201451120223823,
+          "vote_brier": 0.5222971564027185,
+          "majority_accuracy": 0.7195767195767195,
+          "balanced_accuracy": 0.6900705052878966,
+          "majority_class_counts_fail_pass": [
+            74,
+            115
+          ]
+        },
+        "lora_image": {
+          "examples": 192,
+          "human_ties": 3,
+          "vote_nll": 0.7905521489937525,
+          "vote_brier": 0.49293852024092044,
+          "majority_accuracy": 0.7354497354497355,
+          "balanced_accuracy": 0.7368390129259694,
+          "majority_class_counts_fail_pass": [
+            74,
+            115
+          ]
+        },
+        "base_text": {
+          "examples": 192,
+          "human_ties": 3,
+          "vote_nll": 2.250388939081639,
+          "vote_brier": 0.7407656005362311,
+          "majority_accuracy": 0.6243386243386243,
+          "balanced_accuracy": 0.5564042303172738,
+          "majority_class_counts_fail_pass": [
+            74,
+            115
+          ]
+        },
+        "lora_text": {
+          "examples": 192,
+          "human_ties": 3,
+          "vote_nll": 1.1359335595575093,
+          "vote_brier": 0.624198353628083,
+          "majority_accuracy": 0.6402116402116402,
+          "balanced_accuracy": 0.6007638072855465,
+          "majority_class_counts_fail_pass": [
+            74,
+            115
+          ]
+        },
+        "train_prior": {
+          "examples": 192,
+          "human_ties": 3,
+          "vote_nll": 0.6788904915637674,
+          "vote_brier": 0.4858037753139833,
+          "majority_accuracy": 0.6084656084656085,
+          "balanced_accuracy": 0.5,
+          "majority_class_counts_fail_pass": [
+            74,
+            115
+          ]
+        }
+      },
+      "paired_group_bootstrap": {
+        "base_image__vs__lora_image": {
+          "groups": 16,
+          "repetitions": 2000,
+          "seed": 20261013,
+          "metrics": {
+            "vote_nll": {
+              "right_minus_left": -0.4295929630286298,
+              "ci95": [
+                -0.8259021437481329,
+                -0.18557429745390874
+              ],
+              "valid_replicates": 2000
+            },
+            "vote_brier": {
+              "right_minus_left": -0.029358636161798013,
+              "ci95": [
+                -0.0904979018187263,
+                0.025006589095246168
+              ],
+              "valid_replicates": 2000
+            },
+            "majority_accuracy": {
+              "right_minus_left": 0.015873015873015928,
+              "ci95": [
+                -0.0326797385620915,
+                0.0625
+              ],
+              "valid_replicates": 2000
+            },
+            "balanced_accuracy": {
+              "right_minus_left": 0.04676850763807283,
+              "ci95": [
+                -0.009740259740259827,
+                0.09399159663865542
+              ],
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "base_text__vs__base_image": {
+          "groups": 16,
+          "repetitions": 2000,
+          "seed": 20261013,
+          "metrics": {
+            "vote_nll": {
+              "right_minus_left": -1.0302438270592569,
+              "ci95": [
+                -1.5447783944146516,
+                -0.4752659266418455
+              ],
+              "valid_replicates": 2000
+            },
+            "vote_brier": {
+              "right_minus_left": -0.21846844413351263,
+              "ci95": [
+                -0.3665105029034814,
+                -0.09576928090871073
+              ],
+              "valid_replicates": 2000
+            },
+            "majority_accuracy": {
+              "right_minus_left": 0.09523809523809523,
+              "ci95": [
+                0.016528925619834656,
+                0.19875776397515532
+              ],
+              "valid_replicates": 2000
+            },
+            "balanced_accuracy": {
+              "right_minus_left": 0.13366627497062278,
+              "ci95": [
+                0.04656435298221129,
+                0.21101904230738588
+              ],
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "lora_text__vs__lora_image": {
+          "groups": 16,
+          "repetitions": 2000,
+          "seed": 20261013,
+          "metrics": {
+            "vote_nll": {
+              "right_minus_left": -0.3453814105637568,
+              "ci95": [
+                -0.6784674405178963,
+                -0.11842852115999902
+              ],
+              "valid_replicates": 2000
+            },
+            "vote_brier": {
+              "right_minus_left": -0.13125983338716252,
+              "ci95": [
+                -0.25707619449502994,
+                -0.01508441471630817
+              ],
+              "valid_replicates": 2000
+            },
+            "majority_accuracy": {
+              "right_minus_left": 0.09523809523809523,
+              "ci95": [
+                -0.026415094339622636,
+                0.198581560283688
+              ],
+              "valid_replicates": 2000
+            },
+            "balanced_accuracy": {
+              "right_minus_left": 0.13607520564042297,
+              "ci95": [
+                -0.0003373819163292602,
+                0.23390233362143475
+              ],
+              "valid_replicates": 2000
+            }
+          }
+        },
+        "train_prior__vs__base_image": {
+          "groups": 16,
+          "repetitions": 2000,
+          "seed": 20261013,
+          "metrics": {
+            "vote_nll": {
+              "right_minus_left": 0.5412546204586149,
+              "ci95": [
+                0.2619481808307784,
+                0.9856039842833133
+              ],
+              "valid_replicates": 2000
+            },
+            "vote_brier": {
+              "right_minus_left": 0.03649338108873518,
+              "ci95": [
+                -0.047249998101303814,
+                0.1288638418530541
+              ],
+              "valid_replicates": 2000
+            },
+            "majority_accuracy": {
+              "right_minus_left": 0.11111111111111105,
+              "ci95": [
+                0.014285714285714235,
+                0.2589928057553956
+              ],
+              "valid_replicates": 2000
+            },
+            "balanced_accuracy": {
+              "right_minus_left": 0.1900705052878966,
+              "ci95": [
+                0.12374581939799334,
+                0.25
+              ],
+              "valid_replicates": 2000
+            }
+          }
+        }
+      },
+      "train_prior": 0.568992248062015,
+      "train_manifest_sha256": "a1aa31f372a351fcefd2c92f927639294cfa38fb8ddd7e1490daab9a8c04da3a",
+      "checkpoint_sha256": "703486020a9b0ac5a34aff33ef4f5f3104628d3363c0128f874a5f681922b52c",
+      "dataset_sha256": "33f93ec68f2ebca80b815dab619bdc9f61d7b75e55e05ad0e48cfb83a8f3bd2f",
+      "seconds": 288.8841213,
+      "peak_allocated_bytes": 4285002240,
+      "precision": "BF16 frozen base / FP32 LoRA",
+      "complete": true
+    },
+    "complete": true
+  },
+  "runtime_source_sha256": {
+    "scripts/train_element_lora.py": "b78c8f4b69225c7ad8c7e13a338465cbbfe183d9171e8bbc11606227904d8ed5",
+    "src/element_training.py": "0cfb33d2575bb7d1b50ce33a15df234f619a105d5021fdb2cf23d2e88be44272",
+    "src/element_lora.py": "af5f2b5e15606169bb315ef0d800f17c2eb80f6be7b41d1818d7b49b365beabb",
+    "src/modeling.py": "dfad28532db894b85b9dc87fa856e26ef61a43cd7f9e6de5ed32e146ed711c19",
+    "src/element_data.py": "a339052b05a91ac58001b6dad3bae34ba14fccb11360171e986ae9bbda460b17",
+    "src/constrained_choice.py": "fc19ccdac8dd32a73499fb393ca48e25bce27425153015e1fd51e59c0bc1417a",
+    "scripts/run_expanded_study.py": "caaefc4db0cbb76725f7cb22c6da0c627ee30cdeea1e76a34e629037c69c420c",
+    "scripts/prepare_element_corpus.py": "9b4e60b8469efe36e109572dabfe4e91ce26ec95f279bae3b58508bf18b986a2",
+    "src/element_diagnostics.py": "5ce2f6e3ddfc53319a833fc6adec66a0cd8bf44c5783387a2145464d2d3cd5df",
+    "src/element_vote_temperature.py": "048b2e0d7376156c753b0464edf753db6c4ef5732c119999a9b8d5333146ebf0",
+    "scripts/fit_element_temperature.py": "ed50b7595934b1a78f7ecd480b96b844296251d7e30871450662dfde6067e217"
+  },
+  "predictions_sha256": "cbffbb71e302d06b6c086fb1e54869ec111149d0a83aea0b1464aaf642bd5fc4",
+  "matched_development_baselines": true,
+  "test_prediction_records": 960,
+  "tests": 43,
+  "environment": {
+    "python": "3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]",
+    "executable": "D:\\career-projects\\envs\\multimodal-gpu\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.6",
+      "Pillow": "11.3.0",
+      "numpy": "2.0.2"
+    }
+  }
+}
